@@ -10,7 +10,6 @@ from data.models.countries import Country
 from data.models.orders import Order
 from data.models.favourites import FavouriteItems
 from data.forms import RegisterForm, LoginForm, AddClothForm, OrderForm, OrderRegistrationForm
-from flask_ngrok import run_with_ngrok
 from flask_login import (login_user, logout_user, login_required, LoginManager, current_user)
 from flask_restful import Api
 from resources import all_resources
@@ -21,7 +20,6 @@ ADMINISTRATOR_PASSWORD = 'r651I45H5P3Za45s'
 COUNT_OF_CLOTHS_BY_ONE_PAGE = 30
 DB_NAME = 'Main'
 app = Flask(__name__)
-run_with_ngrok(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 db_session.global_init(f'db/{DB_NAME}.sqlite')
 app.config['PERMANENT_SESSION_LIFETIME'] = datetime.timedelta(days=365)
@@ -448,5 +446,4 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.register_blueprint(user_api.blueprint)
-    app.run()
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

@@ -1,0 +1,25 @@
+a.buttons {
+  width: 300px;
+  text-decoration: none;
+  color: #009900;
+  padding-top: 25px;
+  vertical-align: middle;
+  text-align: center;
+  display: block;
+  font: normal 27px arial;
+}
+
+form {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #ffedb9;
+  vertical-align: middle;
+  width: 70%;
+}
+
+textarea {
+  width: 95%;
+  height: 100px;
+}

@@ -1,0 +1,16 @@
+a.buttons {
+  width: 300px;
+  text-decoration: none;
+  color: #009900;
+  padding-top: 25px;
+  vertical-align: middle;
+  text-align: center;
+  display: block;
+  font: normal 27px arial;
+}
+div.Cloth {
+  display: block;
+  background-color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+}

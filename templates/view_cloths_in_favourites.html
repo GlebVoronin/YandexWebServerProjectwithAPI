@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block main %}
+<link rel="stylesheet"
+      type="text/css"
+      href="../static/css/style_view_cloths_list.css"/>
+<h1 align="center">Избранное</h1><br>
+<a class="buttons" href='/'>Назад</a><br>
+{% for cloth in cloths %}
+<a class="buttons" href="/view{{ cloth.get_url() }}">
+    <div id="Cloth">
+        {{ cloth.title }}<br>
+        <img src="{{ cloth.get_images(False) }}"><br>
+        {{ cloth.colors }}<br>
+        {{ cloth.length }} метров осталось<br>
+        Цена за 1 метр: {{ cloth.price }} р.<br>
+        <a class="btn btn-primary " href="/order{{ cloth.get_url() }}">Добавить в заказ</a>
+        <a class="btn btn-primary " href="/favourites/delete{{ cloth.get_url() }}">Удалить из избранного</a>
+    </div>
+</a>
+{% endfor %}
+{% endblock %}

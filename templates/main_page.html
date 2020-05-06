@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block main %}
+<link rel="stylesheet"
+      type="text/css"
+      href="../static/css/style_main_page_v22.css"/>
+{% if current_user.account_type == 'Администратор' %}
+<a class="buttons" href='/add_cloth'>Добавить ткани</a>
+<a class="buttons" href='/favourites'>Избранное</a>
+<a class="buttons" href='/order'>Заказ</a>
+{% endif %}
+{% for cloth in cloths %}
+<a class="buttons" href="/view{{ cloth.get_url() }}">
+<div id="Cloth">
+    {{ cloth.title }}<br>
+    <img src="{{ cloth.get_images(False) }}"><br>
+    {{ cloth.colors }}<br>
+    {{ cloth.length }} метров осталось<br>
+    Цена за 1 метр: {{ cloth.price }} р.<br>
+    {{ cloth.country }}
+    {% if current_user.account_type == 'Администратор' %}
+    <a class="btn btn-primary " href="{{ cloth.get_url() }}">Редактировать</a>
+    <a class="btn btn-primary " href="/delete{{ cloth.get_url() }}">Удалить</a>
+    {% endif %}
+</div>
+</a>
+{% endfor %}
+{% endblock %}

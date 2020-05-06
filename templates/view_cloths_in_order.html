@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block main %}
+<link rel="stylesheet"
+      type="text/css"
+      href="../static/css/style_view_cloths_list.css"/>
+<h1 align="center">Ваш заказ</h1><br>
+<a class="buttons" href='/'>Назад</a><br>
+<form action="" method="post" novalidate style="margin-left: 50px;" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    {% for cloth_index in length %}
+    <p>
+        {{ cloths[cloth_index].title }}<br>
+        <a class="buttons" href="/view{{ cloths[cloth_index].get_url() }}">
+            <img src="{{ cloths[cloth_index].get_images(False) }}" alt="">
+        </a>
+        <br>
+        {{ cloths[cloth_index].colors }}<br>
+        {{ cloths[cloth_index].length }} метров осталось<br>
+        {{ cloths[cloth_index].title }}<br>
+        Цена за 1 метр: {{ cloths[cloth_index].price }} р.<br>
+        {{ form.count_list[cloth_index].label }}<br>
+        {{ form.count_list[cloth_index](class="form-control") }}<br>
+        {% if count and form.count_list[cloth_index].data and cloths[cloth_index].length <
+        form.count_list[cloth_index].data %}
+        На складе ткани меньше, чем вы указали!<br>
+        {% elif count and form.count_list[cloth_index].data %}
+        Сумма: {{ cloths[cloth_index].price * form.count_list[cloth_index].data }}<br>
+        {% endif %}
+        {% for error in form.count_list[cloth_index].errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    <a class="btn btn-primary " href="/order/delete{{ cloths[cloth_index].get_url() }}">
+        Удалить из заказа
+    </a><br>
+    {% endfor %}
+    {% if count %}
+    Сумма заказа: {{ summ }}<br>
+    {% endif %}
+    {% if length %}
+    <input class="btn btn-primary" formaction="/order?count=True" formmethod="post" type="submit"
+           value="Рассчитать сумму заказа">
+    <p>{{ form.submit(type="submit", class="btn btn-primary", title="Перейти к оформлению заказа",
+        formaction="/order?confirm=True") }}</p>
+    {% else %}
+    <h3>В вашем заказе нет тканей</h3>
+    {% endif %}
+</form>
+{% endblock %}
+

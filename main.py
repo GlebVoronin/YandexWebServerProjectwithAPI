@@ -1,6 +1,7 @@
 import datetime
 from PIL import Image
 import logging
+import os
 from requests import get, post, delete, put, patch
 from flask import (Flask, request, abort, render_template, redirect, jsonify, make_response)
 from data import db_session

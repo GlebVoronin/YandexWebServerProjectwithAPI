@@ -8,7 +8,7 @@
 <br><img src="{{ cloth.get_images(False) }}" alt="None"><br>
 {% for image in cloth.get_images(True) %}
 {% if not loop.first %}
-<a class="buttons" href="{{ image }}">Изображение {{ loop.index0 }}</a>
+<a class="buttons" href="/view/image/{{ image }}">Изображение {{ loop.index0 }}</a>
 {% endif %}
 {% endfor %}
 {{ cloth.colors }}<br>

@@ -136,6 +136,11 @@ def view_cloth(cloth_id):
     return render_template('view_cloth.html', cloth=cloth)
 
 
+@app.route('/view/image/<link>')
+def view_image(link):
+    return render_template('view_image.html', link=link)
+
+
 @login_required
 @app.route('/favourites/<cloth_id>')
 def add_cloth_to_favourites(cloth_id):
@@ -452,4 +457,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

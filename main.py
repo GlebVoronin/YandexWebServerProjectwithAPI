@@ -1,6 +1,7 @@
 import datetime
 from PIL import Image
 import logging
+import os
 from requests import get, post, delete, put, patch
 from flask import (Flask, request, abort, render_template, redirect, jsonify, make_response)
 from data import db_session
@@ -448,4 +449,4 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

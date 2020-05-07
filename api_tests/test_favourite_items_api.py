@@ -28,3 +28,5 @@ print(get(favourite_api_server + "/787451188").json())
 print(delete(favourite_api_server + "/787451188").json())  # то же, что и впредыдущем пункте
 print(delete(favourite_api_server + "/abc").json())  # такого id нет
 print(put(favourite_api_server + '/2', json={}))  # пустой запрос
+# запрос без items_id, set - параметра напротив в api/favourites напротив нет
+print(put(favourite_api_server + '/2', json={'set': ''}))  # пустой запрос

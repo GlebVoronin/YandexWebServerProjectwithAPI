@@ -12,15 +12,15 @@ from parsers.order_parser import parser as order_parser
 from parsers.favourite_parser import parser as favourite_parser
 from parsers.country_parser import parser as country_parser
 
-LIST_OF_ARGUMENTS_FOR_USER_RESOURCE = ('id', 'surname', 'name', 'middle_name',
-                                       'email', 'phone_number', 'address', 'postal_code',
-                                       'hashed_password', 'register_date', 'order_id', 'favourite_id',
-                                       'account_type')
-LIST_OF_ARGUMENTS_FOR_CLOTH_RESOURCE = ('id', 'title', 'description', 'images_links', 'colors',
-                                        'length', 'price', 'date', 'country_id')
-LIST_OF_ARGUMENTS_FOR_ORDER_RESOURCE = ('id', 'items_id', 'is_finished', 'status')
-LIST_OF_ARGUMENTS_FOR_FAVOURITE_RESOURCE = ('id', 'items_id')
-LIST_OF_ARGUMENTS_FOR_COUNTRY_RESOURCE = ('id', 'title')
+DICT_OF_ARGUMENTS_FOR_MODELS = {'User': ('id', 'surname', 'name', 'middle_name',
+                                         'email', 'phone_number', 'address', 'postal_code',
+                                         'hashed_password', 'register_date', 'order_id', 'favourite_id',
+                                         'account_type'),
+                                'Cloth': ('id', 'title', 'description', 'images_links', 'colors',
+                                          'length', 'price', 'date', 'country_id'),
+                                'Order': ('id', 'items_id', 'is_finished', 'status'),
+                                'FavouriteItems': ('id', 'items_id'),
+                                'Country': ('id', 'title')}
 
 
 class BaseResource(Resource):
@@ -105,6 +105,15 @@ class BaseListResource(Resource):
                      for item in objects]
             }
         )
+
+
+class MetaClass(type):
+    def __new__(mcs, class_of_object, attrs, lst_class=False):
+        name = class_of_object.__name__
+        base = tuple(BaseListResource if lst_class else BaseResource)
+        name += 'ListResource' if lst_class else 'Resource'
+        dict_attrs = {'class_of_object': class_of_object, ''}
+        return type.__new__(mcs, name, base, dict_attrs)
 
 
 class UserResource(BaseResource):

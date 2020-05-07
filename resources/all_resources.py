@@ -21,6 +21,11 @@ DICT_OF_ARGUMENTS_FOR_MODELS = {'User': ('id', 'surname', 'name', 'middle_name',
                                 'Order': ('id', 'items_id', 'is_finished', 'status'),
                                 'FavouriteItems': ('id', 'items_id'),
                                 'Country': ('id', 'title')}
+DICT_OF_PARSERS = {'User': user_parser,
+                   'Cloth': cloth_parser,
+                   'Order': order_parser,
+                   'FavouriteItems': favourite_parser,
+                   'Country': country_parser}
 
 
 class BaseResource(Resource):
@@ -108,59 +113,30 @@ class BaseListResource(Resource):
 
 
 class MetaClass(type):
-    def __new__(mcs, class_of_object, attrs, lst_class=False):
+    """
+    Метакласс. Создаёт классы API по нужной модели на основе базовых
+    см. BaseResource, BaseListResource
+    """
+
+    def __new__(mcs, class_of_object, lst_class=False):
         name = class_of_object.__name__
         base = tuple(BaseListResource if lst_class else BaseResource)
+        # Аргументы при инициализации базового класса
+        # Зависят от нужной модели (класса) - class_of_object
+        dict_attrs = {'class_of_object': class_of_object,
+                      'parser': DICT_OF_PARSERS[name],
+                      'list_of_arguments': DICT_OF_ARGUMENTS_FOR_MODELS[name]}
         name += 'ListResource' if lst_class else 'Resource'
-        dict_attrs = {'class_of_object': class_of_object, ''}
         return type.__new__(mcs, name, base, dict_attrs)
 
 
-class UserResource(BaseResource):
-    def __init__(self):
-        super().__init__(User, user_parser, LIST_OF_ARGUMENTS_FOR_USER_RESOURCE)
-
-
-class UserListResource(BaseListResource):
-    def __init__(self):
-        super().__init__(User, user_parser, LIST_OF_ARGUMENTS_FOR_USER_RESOURCE)
-
-
-class ClothResource(BaseResource):
-    def __init__(self):
-        super().__init__(Cloth, cloth_parser, LIST_OF_ARGUMENTS_FOR_CLOTH_RESOURCE)
-
-
-class ClothListResource(BaseListResource):
-    def __init__(self):
-        super().__init__(Cloth, cloth_parser, LIST_OF_ARGUMENTS_FOR_CLOTH_RESOURCE)
-
-
-class OrderResource(BaseResource):
-    def __init__(self):
-        super().__init__(Order, order_parser, LIST_OF_ARGUMENTS_FOR_ORDER_RESOURCE)
-
-
-class OrderListResource(BaseListResource):
-    def __init__(self):
-        super().__init__(Order, order_parser, LIST_OF_ARGUMENTS_FOR_ORDER_RESOURCE)
-
-
-class FavouriteItemsResource(BaseResource):
-    def __init__(self):
-        super().__init__(FavouriteItems, favourite_parser, LIST_OF_ARGUMENTS_FOR_FAVOURITE_RESOURCE)
-
-
-class FavouriteItemsListResource(BaseListResource):
-    def __init__(self):
-        super().__init__(FavouriteItems, favourite_parser, LIST_OF_ARGUMENTS_FOR_FAVOURITE_RESOURCE)
-
-
-class CountryResource(BaseResource):
-    def __init__(self):
-        super().__init__(Country, country_parser, LIST_OF_ARGUMENTS_FOR_COUNTRY_RESOURCE)
-
-
-class CountryListResource(BaseListResource):
-    def __init__(self):
-        super().__init__(Country, country_parser, LIST_OF_ARGUMENTS_FOR_COUNTRY_RESOURCE)
+UserResource = MetaClass(User)
+UserListResource = MetaClass(User, True)
+ClothResource = MetaClass(Cloth)
+ClothListResource = MetaClass(Cloth, True)
+OrderResource = MetaClass(Order)
+OrderListResource = MetaClass(Order, True)
+FavouriteItemsResource = MetaClass(FavouriteItems)
+FavouriteItemsListResource = MetaClass(FavouriteItems, True)
+CountryResource = MetaClass(Country)
+CountryListResource = MetaClass(Country, True)

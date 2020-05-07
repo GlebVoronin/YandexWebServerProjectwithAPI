@@ -28,21 +28,23 @@ DICT_OF_PARSERS = {'User': user_parser,
                    'FavouriteItems': favourite_parser,
                    'Country': country_parser}
 
+"""Классы должны быть созданы с помощью метакласса.
+Создание объектов базовых классов не предусмотрено,
+но от них могут наследоваться другие классы.
+В данном случае должен быть объявлен метод __init__,
+устанавливающий атрибуты class_of_object, parser, list_of_arguments
+class_of_object - класс модели, для которой создается ресурс API
+parser - парсер аргументов для json
+list_of_arguments - список/кортеж, содержащий названия полей класса модели для базы данных 
+"""
+
 
 class BaseResource(Resource):
     """
     Базовый класс ресурса для API, от которого наследуются классы для реальных моделей.
     Все методы универсальны для всех моделей, но могут быть переопределены при необходимости,
     так как используется наследование.
-    Различаются последующие классы методом __init__, который у всех различен и, возможно,
-    переопределёнными методами, если они будут необходимы.
-    При большем числе моделей, возможно, будут нужны метаклассы.
     """
-
-    def __init__(self, class_of_object=None, object_parser=None, list_of_args=None):
-        self.class_of_object = class_of_object  # классы нужной модели
-        self.parser = object_parser  # парсер для нужной модели
-        self.list_of_arguments = list_of_args  # список полей в базе данных нужной модели
 
     def abort_if_object__not_found(self, object_id):
         """Проверка на наличие объекта с нужным id в базе данных"""
@@ -86,11 +88,6 @@ class BaseResource(Resource):
 class BaseListResource(Resource):
     """Класс, подобный предыдущему, для списка объектов моделей"""
 
-    def __init__(self, class_of_object=None, object_parser=None, list_of_args=None):
-        self.class_of_object = class_of_object
-        self.parser = object_parser
-        self.list_of_arguments = list_of_args
-
     def post(self):
         args = self.parser.parse_args()
         session = db_session.create_session()
@@ -120,6 +117,11 @@ class MetaClass(MethodViewType):
     """
 
     def __init__(cls, cls_obj, lst=False):
+        """
+        Переопределение метода __init__ класса MethodViewType
+        Это нужно только ради отсутствия конфликта метаклассов, так как
+        MethodViewType - метакласс
+        """
         pass
 
     def __new__(mcs, class_of_object, lst_class=False):
@@ -127,11 +129,12 @@ class MetaClass(MethodViewType):
         base = BaseListResource if lst_class else BaseResource
         # Аргументы при инициализации базового класса
         # Зависят от нужной модели (класса) - class_of_object
+        # вместо подстановки в __init__ они добавляются при создании
         dict_attrs = {'class_of_object': class_of_object,
                       'parser': DICT_OF_PARSERS[name],
                       'list_of_arguments': DICT_OF_ARGUMENTS_FOR_MODELS[name]}
-        name += 'ListResource' if lst_class else 'Resource'
-        return type.__new__(mcs, name, (base,), dict_attrs)
+        name += 'ListResource' if lst_class else 'Resource'  # имя будущего класса
+        return type.__new__(mcs, name, (base,), dict_attrs)  # возвращает class-объект
 
 
 UserResource = MetaClass(User)
@@ -144,4 +147,3 @@ FavouriteItemsResource = MetaClass(FavouriteItems)
 FavouriteItemsListResource = MetaClass(FavouriteItems, True)
 CountryResource = MetaClass(Country)
 CountryListResource = MetaClass(Country, True)
-print()

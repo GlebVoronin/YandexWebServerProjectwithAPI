@@ -257,7 +257,12 @@ def view_order(form_data=[]):
         if order_registration_form.validate_on_submit():
             for index in range(len(cloths)):
                 cloths[index].length -= form_data[0][index]
-            order.items_id = ""
+            order.status = f'ожидает отправки, id пользователя=={current_user.id}'
+            user = session.query(User).filter(User.id == current_user.id).first()
+            order = Order(items_id='', status='подготовка', is_finished=False)
+            session.add(order)
+            session.commit()
+            user.order_id = order.id
             session.commit()
             return render_template('success_order_registration.html')
         else:

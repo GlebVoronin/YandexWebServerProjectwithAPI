@@ -79,7 +79,7 @@ class BaseResource(Resource):
         object_ = session.query(self.class_of_object).filter(self.class_of_object.id == object_id).first()
         args = self.parser.parse_args()
         """установка значений аргументов для объекта модели self.class_of_object (эксперимент с setattr)"""
-        for arg_name in self.list_of_arguments:
+        for arg_name in self.list_of_arguments[1:]:  # [1:] т.к id не меняется
             setattr(object_, arg_name, args[arg_name])
         session.commit()
         return jsonify({'success': 'OK'})

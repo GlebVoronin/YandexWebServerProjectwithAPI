@@ -176,7 +176,7 @@ def delete_cloth_from_favourites(cloth_id):
 
 
 @login_required
-@app.route('/orderr/delete/<cloth_id>')
+@app.route('/order/delete/<cloth_id>')
 def delete_cloth_from_order(cloth_id):
     session = db_session.create_session()
     order = session.query(Order).filter(

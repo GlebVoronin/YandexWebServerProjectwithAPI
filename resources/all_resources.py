@@ -145,6 +145,7 @@ def impossible_action(self, object_id):
 
 UserResource = MetaClass(User)
 setattr(UserResource, 'put', impossible_action)  # api не должно менять данные пользователя
+setattr(UserResource, 'delete', impossible_action)  # api не должно удалять пользователей
 UserListResource = MetaClass(User, True)  # api не должно регистрировать пользователей
 setattr(UserResource, 'post', impossible_action)
 ClothResource = MetaClass(Cloth)

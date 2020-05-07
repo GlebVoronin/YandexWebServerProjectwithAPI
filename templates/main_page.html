@@ -17,7 +17,7 @@
     {{ cloth.colors }}<br>
     {{ cloth.length }} метров осталось<br>
     Цена за 1 метр: {{ cloth.price }} р.<br>
-    {{ cloth.country }}
+    {{ cloth.country_id }}
     {% if current_user.account_type == 'Администратор' %}
     <a class="btn btn-primary " href="{{ cloth.get_url() }}">Редактировать</a>
     <a class="btn btn-primary " href="/delete{{ cloth.get_url() }}">Удалить</a>

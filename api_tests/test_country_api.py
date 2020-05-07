@@ -2,7 +2,7 @@ from requests import get, post, put, delete
 
 country_api_server = 'http://cloths-shop-prorotype.herokuapp.com/api/countries'
 # 'id', 'title' - возможные поля, используемые в бд
-"""Для выполнения корректного запроса требуется заполнение всех полей модели !"""
+"""Для выполнения корректного запроса требуется заполнение всех полей модели кроме id!"""
 """Корректные"""
 """CountryListResource"""
 print(get(country_api_server).json())
@@ -20,8 +20,6 @@ print(get(country_api_server).json())  # проверка результатов
 """CountryListResource"""
 # лишний слэш (/) API считает за пустой аргумент id -> неверно
 print(get('http://cloths-shop-prorotype.herokuapp.com/api/countries/').json())
-# id не может быть строкой - str. type(id) == int
-print(post(country_api_server, json={'id': 'abc', 'title': 'Италия'}).json())
 """CountryResource"""
 print(get(country_api_server + "/abc").json())  # неверный id т.к. не int
 # предположительно некорректный запрос. Вероятнее всего, такого id нет

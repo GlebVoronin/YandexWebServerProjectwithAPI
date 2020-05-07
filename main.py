@@ -30,13 +30,13 @@ api = Api(app)
 api.add_resource(all_resources.UserListResource, '/api/users')
 api.add_resource(all_resources.UserResource, '/api/users/<int:user_id>')
 api.add_resource(all_resources.FavouriteItemsListResource, '/api/favourites')
-api.add_resource(all_resources.FavouriteItemsResource, '/api/favourites/<int:user_id>')
+api.add_resource(all_resources.FavouriteItemsResource, '/api/favourites/<int:favourite_items_id>')
 api.add_resource(all_resources.ClothListResource, '/api/cloths')
-api.add_resource(all_resources.ClothResource, '/api/cloths/<int:user_id>')
+api.add_resource(all_resources.ClothResource, '/api/cloths/<int:cloth_id>')
 api.add_resource(all_resources.CountryListResource, '/api/countries')
-api.add_resource(all_resources.CountryResource, '/api/countries/<int:user_id>')
+api.add_resource(all_resources.CountryResource, '/api/countries/<int:country_id>')
 api.add_resource(all_resources.OrderListResource, '/api/orders')
-api.add_resource(all_resources.OrderResource, '/api/orders/<int:user_id>')
+api.add_resource(all_resources.OrderResource, '/api/orders/<int:order_id>')
 
 
 def find_cloth_by_id(cloth_id):

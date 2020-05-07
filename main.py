@@ -452,5 +452,4 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507)) for heroku
-    app.run()
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

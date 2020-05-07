@@ -2,12 +2,13 @@ from requests import get, post, put, delete
 
 country_api_server = 'http://localhost:5000/api/countries'
 # 'id', 'title' - возможные поля, используемые в бд
+"""Для выполнения корректного запроса требуется заполнение всех полей модели !"""
 """
 Корректные
 """
 """CountryListResource"""
 print(get(country_api_server).json())
-print(post(country_api_server, json={'id': 25, 'title': 'Россия'}).json())
+print(post(country_api_server, json={'id': 1, 'title': 'Италия'}).json())
 print(get(country_api_server).json())  # проверка добавления
 """CountryResource"""
 print(get(country_api_server).json())  # проверка исходных значений

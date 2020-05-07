@@ -139,8 +139,14 @@ class MetaClass(MethodViewType):
         return type.__new__(mcs, name, (base,), dict_attrs)  # возвращает class-объект
 
 
+def impossible_action(self, object_id):
+    return jsonify({'message': 'Impossible'})
+
+
 UserResource = MetaClass(User)
-UserListResource = MetaClass(User, True)
+setattr(UserResource, 'put', impossible_action)  # api не должно менять данные пользователя
+UserListResource = MetaClass(User, True)  # api не должно регистрировать пользователей
+setattr(UserResource, 'post', impossible_action)
 ClothResource = MetaClass(Cloth)
 ClothListResource = MetaClass(Cloth, True)
 OrderResource = MetaClass(Order)

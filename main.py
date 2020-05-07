@@ -37,6 +37,7 @@ api.add_resource(all_resources.CountryListResource, '/api/countries')
 api.add_resource(all_resources.CountryResource, '/api/countries/<int:object_id>')
 api.add_resource(all_resources.OrderListResource, '/api/orders')
 api.add_resource(all_resources.OrderResource, '/api/orders/<int:object_id>')
+API_SERVER = 'http://cloths-shop-prorotype.herokuapp.com/api'
 
 
 def find_cloth_by_id(cloth_id):
@@ -132,12 +133,17 @@ def main_page():
 
 @app.route('/view/<int:cloth_id>')
 def view_cloth(cloth_id):
+    session = db_session.create_session()
     cloth = find_cloth_by_id(cloth_id)
+    country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
+    if country:
+        cloth.country_id = country.get('title', None)
     return render_template('view_cloth.html', cloth=cloth)
 
 
-@app.route('/view/image/<link>')
-def view_image(link):
+@app.route('/view/image')
+def view_image():
+    link = request.args.get('img', default=None)
     return render_template('view_image.html', link=link)
 
 
@@ -457,4 +463,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

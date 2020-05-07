@@ -46,7 +46,7 @@ class BaseResource(Resource):
     так как используется наследование.
     """
 
-    def abort_if_object__not_found(self, object_id):
+    def abort_if_object_not_found(self, object_id):
         """Проверка на наличие объекта с нужным id в базе данных"""
         session = db_session.create_session()
         object_ = session.query(self.class_of_object).get(object_id)  # объект нужной модели
@@ -66,7 +66,7 @@ class BaseResource(Resource):
         )
 
     def delete(self, object_id):
-        self.abort_if_object__not_found(object_id)
+        self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
         object_ = session.query(self.class_of_object).get(object_id)
         session.delete(object_)
@@ -74,7 +74,7 @@ class BaseResource(Resource):
         return jsonify({'success': 'OK'})
 
     def put(self, object_id):
-        self.abort_if_object__not_found(object_id)
+        self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
         object_ = session.query(self.class_of_object).filter(self.class_of_object.id == object_id).first()
         args = self.parser.parse_args()

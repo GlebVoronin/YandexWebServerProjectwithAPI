@@ -11,10 +11,10 @@ print(get(user_api_server + '/2').json())  # получение страны п�
 """UserListResource"""
 # лишний слэш (/) API считает за пустой аргумент id -> неверно
 print(get('http://cloths-shop-prorotype.herokuapp.com/api/users/').json())
-print(post(user_api_server, json={}))  # нельзя применять post к user_api
+print(post(user_api_server, json={}).json())  # нельзя применять post к user_api
 """UserResource"""
 print(get(user_api_server + "/abc").json())  # неверный id т.к. не int
 # предположительно некорректный запрос. Вероятнее всего, такого id нет
 print(get(user_api_server + "/787451188").json())
 print(delete(user_api_server + "/7").json())  # нельзя применять delete к user_api
-print(put(user_api_server + "/abc", json={}))  # нельзя применять put к user_api
+print(put(user_api_server + "/abc", json={}).json())  # нельзя применять put к user_api

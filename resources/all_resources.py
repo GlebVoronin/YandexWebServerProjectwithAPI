@@ -1,4 +1,5 @@
 from flask import jsonify
+from flask.views import MethodViewType
 from data import db_session
 from flask_restful import abort, Resource
 from data.models.users import User
@@ -38,7 +39,7 @@ class BaseResource(Resource):
     При большем числе моделей, возможно, будут нужны метаклассы.
     """
 
-    def __init__(self, class_of_object, object_parser, list_of_args: tuple):
+    def __init__(self, class_of_object=None, object_parser=None, list_of_args=None):
         self.class_of_object = class_of_object  # классы нужной модели
         self.parser = object_parser  # парсер для нужной модели
         self.list_of_arguments = list_of_args  # список полей в базе данных нужной модели
@@ -85,7 +86,7 @@ class BaseResource(Resource):
 class BaseListResource(Resource):
     """Класс, подобный предыдущему, для списка объектов моделей"""
 
-    def __init__(self, class_of_object, object_parser, list_of_args):
+    def __init__(self, class_of_object=None, object_parser=None, list_of_args=None):
         self.class_of_object = class_of_object
         self.parser = object_parser
         self.list_of_arguments = list_of_args
@@ -112,22 +113,25 @@ class BaseListResource(Resource):
         )
 
 
-class MetaClass(type):
+class MetaClass(MethodViewType):
     """
     Метакласс. Создаёт классы API по нужной модели на основе базовых
     см. BaseResource, BaseListResource
     """
 
+    def __init__(cls, cls_obj, lst=False):
+        pass
+
     def __new__(mcs, class_of_object, lst_class=False):
         name = class_of_object.__name__
-        base = tuple(BaseListResource if lst_class else BaseResource)
+        base = BaseListResource if lst_class else BaseResource
         # Аргументы при инициализации базового класса
         # Зависят от нужной модели (класса) - class_of_object
         dict_attrs = {'class_of_object': class_of_object,
                       'parser': DICT_OF_PARSERS[name],
                       'list_of_arguments': DICT_OF_ARGUMENTS_FOR_MODELS[name]}
         name += 'ListResource' if lst_class else 'Resource'
-        return type.__new__(mcs, name, base, dict_attrs)
+        return type.__new__(mcs, name, (base,), dict_attrs)
 
 
 UserResource = MetaClass(User)
@@ -140,3 +144,4 @@ FavouriteItemsResource = MetaClass(FavouriteItems)
 FavouriteItemsListResource = MetaClass(FavouriteItems, True)
 CountryResource = MetaClass(Country)
 CountryListResource = MetaClass(Country, True)
+print()

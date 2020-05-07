@@ -92,7 +92,9 @@ class BaseListResource(Resource):
         args = self.parser.parse_args()
         session = db_session.create_session()
         object_ = self.class_of_object()  # создание объекта модели
-        for arg_name in self.list_of_arguments:  # подстановка нужных полей и их значений
+        # подстановка нужных полей и их значений. [1:] т.к. первый аргумент - id
+        # не требуется указывать
+        for arg_name in self.list_of_arguments[1:]:
             setattr(object_, arg_name, args[arg_name])  # после создания объекта
         session.add(object_)
         session.commit()

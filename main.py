@@ -491,7 +491,7 @@ def register():
             order=order,
             favourites=favourite_items)
         if form.password.data != form.password_repeat.data:
-            if check_password_hash(ADMINISTRATOR_PASSWORD_HASH, form.password_repeat.data):
+            if not check_password_hash(ADMINISTRATOR_PASSWORD_HASH, form.password_repeat.data):
                 return render_template('register.html', title='Регистрация',
                                        form=form,
                                        message="Пароли не совпадают")

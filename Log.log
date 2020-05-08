@@ -1,3 +1,7 @@
 2020-05-08 22:46:54,696 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-08 22:49:30,063 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-09 01:23:35,557 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 01:24:22,635 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 01:24:39,466 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:24:39] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 01:24:42,903 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:24:42] "[37mGET /register HTTP/1.1[0m" 200 -
+2020-05-09 01:25:01,426 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:25:01] "[37mPOST /register HTTP/1.1[0m" 200 -

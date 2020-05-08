@@ -16,9 +16,12 @@ from parsers.favourite_parser import parser as favourite_parser
 from parsers.country_parser import parser as country_parser
 from parsers.cloth_group_by_type_parser import parser as cloths_type_parser
 from parsers.cloth_group_by_usage_parser import parser as cloths_usage_parser
-from main import ADMINISTRATOR_PASSWORD_HASH
 from werkzeug.security import check_password_hash
 
+CONFIG_FILE = './config.txt'
+config_file = open(CONFIG_FILE, 'r')
+ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
+ADMINISTRATOR_PASSWORD_HASH = ''.join(ADMINISTRATOR_PASSWORD_HASH).split('==')[1].strip()
 DICT_OF_ARGUMENTS_FOR_MODELS = {'User': ('id', 'surname', 'name', 'middle_name',
                                          'email', 'phone_number', 'address', 'postal_code',
                                          'hashed_password', 'register_date', 'order_id',

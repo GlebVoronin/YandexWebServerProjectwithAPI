@@ -12,6 +12,8 @@
 {{ cloth.description }}<br>
 {{ cloth.length }} метров осталось<br>
 Цена за 1 метр: {{ cloth.price }} р.<br>
+Тип ткани: {{cloth.cloth_type_id}}<br>
+Использование: {{ cloth.cloth_type_by_usage_id }}<br>
 Страна-производитель: {{ cloth.country_id }}<br>
 {% if current_user.is_authenticated %}
 <a class="btn btn-primary " href="/favourites{{ cloth.get_url() }}">Добавить в избранное</a>

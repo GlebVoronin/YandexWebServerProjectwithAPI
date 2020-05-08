@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField, IntegerField, FieldList,
-                     BooleanField, MultipleFileField, FloatField, TextAreaField)
+                     BooleanField, MultipleFileField, FloatField, TextAreaField, SelectField)
 from wtforms.fields.html5 import EmailField, SearchField
 from wtforms.validators import DataRequired, Email
 from data.validators import CheckStringFieldByDigit
@@ -34,6 +34,8 @@ class AddClothForm(FlaskForm):
     length = FloatField('Доступная длина ткани (в метрах)', validators=[DataRequired()])
     price = IntegerField('Цена ткани (за 1 метр)', validators=[DataRequired()])
     country = StringField('Страна-производитель', validators=[DataRequired()])
+    usage = SelectField('Использование ткани', choices=[], validators=[DataRequired()])
+    type = SelectField('Тип ткани', choices=[], validators=[DataRequired()])
     submit = SubmitField('Подтвердить')
 
 

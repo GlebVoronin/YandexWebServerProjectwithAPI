@@ -8,18 +8,18 @@
           crossorigin="anonymous">
     <link rel="stylesheet"
       type="text/css"
-      href="../static/css/style_v3.css"/>
+      href="../static/css/style_v4.css"/>
     <title>{{ title }}</title>
 </head>
 <body>
-<div class="container text-center" style="position:absolute;width:25%;right: 0;">
-    <div class="alert alert-success" role="alert" align="center">
+<div class="container text-center" id="auth_block">
+    <div align="center">
         <h1>Склад тканей</h1>
         {% if current_user.is_authenticated %}
         <a class="navbar-brand" href="/logout">{{ current_user.name }} {{ current_user.surname }}</a>
         {% else %}
         <p>
-            <a class="btn btn-primary " href="/register">Зарегистрироваться</a>
+            <a class="btn btn-primary " id="register" href="/register">Зарегистрироваться</a>
             <a class="btn btn-success" id="login" href="/login">Войти</a> <!-- 00ff00-->
         </p>
         {% endif %}

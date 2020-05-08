@@ -70,3 +70,6 @@ li {
 .btn-primary{
   background-color: #00ff00;
 }
+#Cloth {
+  display: inline-block;
+}

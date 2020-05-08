@@ -3,9 +3,9 @@
 {% block main %}
 {% if current_user.account_type == 'Администратор' %}
 
-<li><a class="buttons" class="mn_p_bt" href='/add_cloth'>Добавить ткани</a></li>
-<li><a class="buttons" class="mn_p_bt" href='/favourites'>Избранное</a></li>
-<li><a class="buttons" class="mn_p_bt" href='/order'>Заказ</a></li>
+<li><a class="btn btn-primary" href='/add_cloth'>Добавить ткани</a></li>
+<li><a class="btn btn-primary" href='/favourites'>Избранное</a></li>
+<li><a class="btn btn-primary" href='/order'>Заказ</a></li>
 
 {% endif %}
 <form id="search" action="" method="post" novalidate>

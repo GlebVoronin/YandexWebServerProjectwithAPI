@@ -28,16 +28,20 @@
         {{ error }}
     </div>
     {% endfor %}
+    <p>
     <a class="btn btn-primary " href="/order/delete{{ cloths[cloth_index].get_url() }}">
         Удалить из заказа
     </a><br>
+    </p>
     {% endfor %}
     {% if count %}
     Сумма заказа: {{ summ }}<br>
     {% endif %}
     {% if length %}
+    <p>
     <input class="btn btn-primary" formaction="/order?count=True" formmethod="post" type="submit"
            value="Рассчитать сумму заказа">
+    </p>
     <p>{{ form.submit(type="submit", class="btn btn-primary", title="Перейти к оформлению заказа",
         formaction="/order?confirm=True") }}</p>
     {% else %}

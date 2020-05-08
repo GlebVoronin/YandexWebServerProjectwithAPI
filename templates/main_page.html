@@ -2,11 +2,13 @@
 
 {% block main %}
 {% if current_user.account_type == 'Администратор' %}
-<a class="buttons" href='/add_cloth'>Добавить ткани</a>
-<a class="buttons" href='/favourites'>Избранное</a>
-<a class="buttons" href='/order'>Заказ</a>
+
+<li><a class="buttons" class="mn_p_bt" href='/add_cloth'>Добавить ткани</a></li>
+<li><a class="buttons" class="mn_p_bt" href='/favourites'>Избранное</a></li>
+<li><a class="buttons" class="mn_p_bt" href='/order'>Заказ</a></li>
+
 {% endif %}
-<form action="" method="post" novalidate style="margin-left: 50px;width: 70%;">
+<form id="search" action="" method="post" novalidate>
     {{ form.hidden_tag() }}
     <p>
         {{ form.text.label }}<br>
@@ -20,19 +22,20 @@
     <p>{{ form.submit(type="submit", class="btn btn-primary", value="Найти") }}</p>
 </form>
 {% for cloth in cloths %}
-<a class="buttons" href="/view{{ cloth.get_url() }}">
-    <div id="Cloth">
-        {{ cloth.title }}<br>
-        <img src="{{ cloth.get_images(False) }}"><br>
-        {{ cloth.colors }}<br>
+<div id="Cloth">
+    <a class="buttons" href="/view{{ cloth.get_url() }}">
+        <div id="title_of_cloth">{{ cloth.title }}<br></div>
+        <img id="main_page_img" src="{{ cloth.get_images(False) }}"><br>
+        Цвета: {{ cloth.colors }}<br>
         {{ cloth.length }} метров осталось<br>
         Цена за 1 метр: {{ cloth.price }} р.<br>
-        {{ cloth.country_id }}
+        Страна-производитель: {{ cloth.country_id }}<br>
         {% if current_user.account_type == 'Администратор' %}
         <a class="btn btn-primary " href="{{ cloth.get_url() }}">Редактировать</a>
         <a class="btn btn-primary " href="/delete{{ cloth.get_url() }}">Удалить</a>
+        <br><br>
         {% endif %}
-    </div>
-</a>
+    </a>
+</div>
 {% endfor %}
 {% endblock %}

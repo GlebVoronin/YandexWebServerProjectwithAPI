@@ -143,7 +143,7 @@ def view_cloth(cloth_id):
     cloth = find_cloth_by_id(cloth_id)
     country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
     if country:
-        cloth.country_id = country.get('title', None)
+        cloth.country_id = country.get('title', 'Неизвестно')
     return render_template('view_cloth.html', cloth=cloth)
 
 
@@ -469,4 +469,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

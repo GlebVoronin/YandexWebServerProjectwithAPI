@@ -14,7 +14,7 @@ print(get(country_api_server + '/2').json())  # получение страны 
 print(put(country_api_server + '/2', json={'title': 'США'}).json())  # изменение по id
 print(get(country_api_server + '/2').json())  # подтверждение изменения
 print(delete(country_api_server + '/2').json())  # удаление по id
-print(delete(country_api_server + '/2').json())  # подтверждение удаления
+print(get(country_api_server + '/2').json())  # подтверждение удаления
 print(get(country_api_server).json())  # проверка результатов
 """Некорректные"""
 """CountryListResource"""

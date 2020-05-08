@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% block main %}
-<link rel="stylesheet"
-      type="text/css"
-      href="../static/css/style_view_cloth_v6.css"/>
 <h2 style="margin-left: 50px;">{{ cloth.title }}</h2>
 <input id="back" type="button" onclick="history.back();" value="Назад"/><br>
 <br><img src="{{ cloth.get_images(False) }}" alt="None"><br>

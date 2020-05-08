@@ -1,15 +1,12 @@
 {% extends "base.html" %}
 
 {% block main %}
-<link rel="stylesheet"
-      type="text/css"
-      href="../static/css/style_main_page_v22.css"/>
 {% if current_user.account_type == 'Администратор' %}
 <a class="buttons" href='/add_cloth'>Добавить ткани</a>
 <a class="buttons" href='/favourites'>Избранное</a>
 <a class="buttons" href='/order'>Заказ</a>
 {% endif %}
-<form action="" method="post" novalidate style="margin-left: 50px;">
+<form action="" method="post" novalidate style="margin-left: 50px;width: 70%;">
     {{ form.hidden_tag() }}
     <p>
         {{ form.text.label }}<br>

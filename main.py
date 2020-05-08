@@ -163,6 +163,12 @@ def view_cloth(cloth_id):
     country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
     if country:
         cloth.country_id = country.get('title', 'Неизвестно')
+    usage = get(API_SERVER + f'/usage/{cloth.cloth_type_by_usage_id}').json()
+    if usage:
+        cloth.cloth_type_by_usage_id = usage.get('title', 'Неизвестно')
+    type_cloth = get(API_SERVER + f'/types/{cloth.cloth_type_id}').json()
+    if type_cloth:
+        cloth.cloth_type_id = type_cloth.get('title', 'Неизвестно')
     return render_template('view_cloth.html', cloth=cloth)
 
 

@@ -10,6 +10,7 @@ body {
 }
 #auth_block {
   width: 20%;
+  right: 0;
 }
 #img_view {
    width: 70%;
@@ -31,5 +32,8 @@ left:5%;
 width: 100px;
 height: 30px;
 color: #00ff00;
+}
+#img_view{
+  left: 5%;
 }
 

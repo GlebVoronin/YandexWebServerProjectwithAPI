@@ -4,11 +4,11 @@ country_api_server = 'http://cloths-shop-prorotype.herokuapp.com/api/usage'
 # 'id', 'title' - возможные поля, используемые в бд
 """Для выполнения корректного запроса требуется заполнение всех полей модели кроме id!"""
 """Корректные"""
-"""CountryListResource"""
+"""TypesClothsByUsageListResource"""
 print(get(country_api_server).json())
 print(post(country_api_server, json={'title': 'Италия'}).json())
 print(get(country_api_server).json())  # проверка добавления
-"""CountryResource"""
+"""TypesClothsByUsageResource"""
 print(get(country_api_server).json())  # проверка исходных значений
 print(get(country_api_server + '/2').json())  # получение страны по id
 print(put(country_api_server + '/2', json={'title': 'США'}).json())  # изменение по id

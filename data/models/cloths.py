@@ -15,6 +15,8 @@ class Cloth(SqlAlchemyBase, SerializerMixin):
     price = sqlalchemy.Column(sqlalchemy.Integer, nullable=False)
     date = sqlalchemy.Column(sqlalchemy.Date)
     country_id = sqlalchemy.Column(sqlalchemy.ForeignKey('countries.id'))
+    cloth_type_id = sqlalchemy.Column(sqlalchemy.ForeignKey('types_cloths.id'))
+    cloth_type_by_usage_id = sqlalchemy.Column(sqlalchemy.ForeignKey('types_cloths_by_usage.id'))
 
     def get_images(self, all_images=False):
         if all_images:

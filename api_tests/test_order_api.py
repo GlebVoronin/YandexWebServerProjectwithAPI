@@ -7,16 +7,20 @@ order_api_server = 'http://cloths-shop-prorotype.herokuapp.com/api/orders'
 """OrderListResource"""
 print(get(order_api_server).json())
 print(post(order_api_server, json={'items_id': '', 'is_finished': False,
-                                   'status': 'подготовка'}).json())
+                                   'status': 'подготовка',
+                                   'api_key': 'r651I45H5P3Za45s'}).json())
 print(get(order_api_server).json())  # проверка добавления
 """OrderResource"""
 print(get(order_api_server).json())  # проверка исходных значений
 print(get(order_api_server + '/2').json())  # получение заказа по id
+# изменение по id
 print(put(order_api_server + '/2', json={'items_id': '', 'is_finished': False,
-                                         'status': 'подготовка'}).json())  # изменение по id
+                                         'status': 'подготовка',
+                                         'api_key': 'r651I45H5P3Za45s'}).json())
 print(get(order_api_server + '/2').json())  # подтверждение изменения
-print(delete(order_api_server + '/2').json())  # удаление по id
-print(delete(order_api_server + '/2').json())  # подтверждение удаления
+# удаление по id
+print(delete(order_api_server + '/2', json={'api_key': 'r651I45H5P3Za45s'}).json())
+print(get(order_api_server + '/2').json())  # подтверждение удаления
 print(get(order_api_server).json())  # проверка результатов
 """Некорректные"""
 """OrderListResource"""
@@ -31,12 +35,19 @@ print(post(order_api_server, json={'items_id': '', 'is_finished': 'trr'}).json()
 print(get(order_api_server + "/abc").json())  # неверный id т.к. не int
 # предположительно некорректный запрос. Вероятнее всего, такого id нет
 print(get(order_api_server + "/787451188").json())
-print(delete(order_api_server + "/787451188").json())  # то же, что и впредыдущем пункте
-print(delete(order_api_server + "/abc").json())  # такого id нет
+print(delete(order_api_server + "/787451188",
+             json={'api_key': 'r651I45H5P3Za45s'}).json())  # то же, что и впредыдущем пункте
+print(delete(order_api_server + "/abc",
+             json={'api_key': 'r651I45H5P3Za45s'}).json())  # такого id нет
 print(put(order_api_server + '/2', json={}))  # пустой запрос
 # is_finished пропущен
 print(put(order_api_server + '/2', json={'items_id': '',
-                                         'status': 'подготовка'}).json())
+                                         'status': 'подготовка',
+                                         'api_key': 'r651I45H5P3Za45s'}).json())
 # is_finished str, а должен быть bool
 print(put(order_api_server + '/2', json={'items_id': '', 'is_finished': 'a',
+                                         'status': 'подготовка',
+                                         'api_key': 'r651I45H5P3Za45s'}).json())
+# пропущен API-ключ
+print(put(order_api_server + '/2', json={'items_id': '', 'is_finished': True,
                                          'status': 'подготовка'}).json())

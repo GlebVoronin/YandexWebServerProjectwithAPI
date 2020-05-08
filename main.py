@@ -18,6 +18,7 @@ from resources import all_resources
 
 CONFIG_FILE = './config.txt'
 logging.basicConfig(
+    level=logging.ERROR,
     filename='Log.log',
     format='%(asctime)s %(levelname)s %(name)s %(message)s'
 )
@@ -477,5 +478,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    # app.run()
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

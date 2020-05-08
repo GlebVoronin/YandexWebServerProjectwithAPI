@@ -1,17 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-          crossorigin="anonymous">
-    <link rel="stylesheet"
-      type="text/css"
-      href="../static/css/style_v4.css"/>
-    <title>{{ title }}</title>
-</head>
-<body>
+{% extends "base_without_auth_block.html" %}
+{% block authorization %}
 <div class="container text-center" id="auth_block">
     <div align="center">
         <h1>Склад тканей</h1>
@@ -25,5 +13,4 @@
         {% endif %}
     </div>
 </div>
-{% block main %}
 {% endblock %}

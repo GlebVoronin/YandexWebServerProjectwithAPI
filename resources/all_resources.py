@@ -18,8 +18,8 @@ from parsers.cloth_group_by_type_parser import parser as cloths_type_parser
 from parsers.cloth_group_by_usage_parser import parser as cloths_usage_parser
 from werkzeug.security import check_password_hash
 
-CONFIG_FILE = './config.txt'
-config_file = open(CONFIG_FILE, 'r')
+CONFIG_FILE = 'config.txt'
+config_file = open(CONFIG_FILE, 'r', encoding='utf-8')
 ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
 ADMINISTRATOR_PASSWORD_HASH = ''.join(ADMINISTRATOR_PASSWORD_HASH).split('==')[1].strip()
 DICT_OF_ARGUMENTS_FOR_MODELS = {'User': ('id', 'surname', 'name', 'middle_name',
@@ -52,13 +52,13 @@ list_of_arguments - список/кортеж, содержащий назван
 """
 
 
-def check_api_key(api_key, name_class_of_model, get_request=False):
+def check_api_key(api_key, get_request=False):
     """
     Проверяет ключ API по хэшу
     API-ключ нужен для любых запросов, кроме get
     и для любых запросов к моделям пользователей
     """
-    if 'user' in name_class_of_model.lower() or not get_request:
+    if not get_request:
         if not api_key:
             return jsonify({'message': 'Not found api key'})
         elif not check_password_hash(ADMINISTRATOR_PASSWORD_HASH, api_key):
@@ -81,8 +81,9 @@ class BaseResource(Resource):
             abort(404, message=f"{self.class_of_object.__name__} {object_id} not found")
 
     def get(self, object_id):
-        api_key = self.parser.parse_args().get('api_key', default=None)
-        check_api_key(api_key, self.class_of_object.__name__, True)
+        if 'user' in self.class_of_object.__name__.lower():
+            api_key = self.parser.parse_args().get('api_key', default=None)
+            check_api_key(api_key)
         self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
         object_ = session.query(self.class_of_object).filter(self.class_of_object.id == object_id).first()
@@ -95,7 +96,7 @@ class BaseResource(Resource):
 
     def delete(self, object_id):
         api_key = self.parser.parse_args().get('api_key', default=None)
-        check_api_key(api_key, self.class_of_object.__name__)
+        check_api_key(api_key)
         self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
         object_ = session.query(self.class_of_object).get(object_id)
@@ -104,12 +105,12 @@ class BaseResource(Resource):
         return jsonify({'success': 'OK'})
 
     def put(self, object_id):
-        api_key = self.parser.parse_args().get('api_key', default=None)
-        check_api_key(api_key, self.class_of_object.__name__)
+        args = self.parser.parse_args()
+        api_key = args.get('api_key', default=None)
+        check_api_key(api_key)
         self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
         object_ = session.query(self.class_of_object).filter(self.class_of_object.id == object_id).first()
-        args = self.parser.parse_args()
         """установка значений аргументов для объекта модели self.class_of_object (эксперимент с setattr)"""
         for arg_name in self.list_of_arguments[1:]:  # [1:] т.к id не меняется
             setattr(object_, arg_name, args[arg_name])
@@ -121,9 +122,9 @@ class BaseListResource(Resource):
     """Класс, подобный предыдущему, для списка объектов моделей"""
 
     def post(self):
-        api_key = self.parser.parse_args().get('api_key', default=None)
-        check_api_key(api_key, self.class_of_object.__name__)
         args = self.parser.parse_args()
+        api_key = args.get('api_key', default=None)
+        check_api_key(api_key)
         session = db_session.create_session()
         object_ = self.class_of_object()  # создание объекта модели
         # подстановка нужных полей и их значений. [1:] т.к. первый аргумент - id
@@ -135,8 +136,9 @@ class BaseListResource(Resource):
         return jsonify({'success': 'OK'})
 
     def get(self):
-        api_key = self.parser.parse_args().get('api_key', default=None)
-        check_api_key(api_key, self.class_of_object.__name__, True)
+        if 'user' in self.class_of_object.__name__.lower():
+            api_key = self.parser.parse_args().get('api_key', default=None)
+            check_api_key(api_key)
         session = db_session.create_session()
         objects = session.query(self.class_of_object).all()
         return jsonify(

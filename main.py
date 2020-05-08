@@ -11,6 +11,8 @@ from data.models.cloths import Cloth
 from data.models.countries import Country
 from data.models.orders import Order
 from data.models.favourites import FavouriteItems
+from data.models.cloth_groups_by_types import TypesCloths
+from data.models.cloth_groups_by_usage import TypesClothsByUsage
 from data.forms import (RegisterForm, LoginForm, AddClothForm,
                         OrderForm, OrderRegistrationForm, SearchForm)
 from flask_login import (login_user, logout_user, login_required, LoginManager, current_user)
@@ -47,6 +49,10 @@ api.add_resource(all_resources.CountryListResource, '/api/countries')
 api.add_resource(all_resources.CountryResource, '/api/countries/<int:object_id>')
 api.add_resource(all_resources.OrderListResource, '/api/orders')
 api.add_resource(all_resources.OrderResource, '/api/orders/<int:object_id>')
+api.add_resource(all_resources.TypesClothsByUsageListResource, '/api/usage')
+api.add_resource(all_resources.TypesClothsByUsageResource, '/api/usage/<int:object_id>')
+api.add_resource(all_resources.TypesClothsListResource, '/api/types')
+api.add_resource(all_resources.TypesClothsResource, '/api/types/<int:object_id>')
 API_SERVER = 'http://cloths-shop-prorotype.herokuapp.com/api'
 
 
@@ -339,7 +345,14 @@ def add_cloth():
             country = Country(title=form.country.data)
             session.add(country)
             session.commit()
-            country = session.query(Country).filter(Country.title == form.country.data).first()
+            country = session.query(Country).filter(
+                Country.title == form.country.data).first()
+        # id типа ткани и его использования по базе данных
+        usage_id = session.query(TypesClothsByUsage).filter(
+            TypesClothsByUsage.title == form.usage.data).first()
+        type_id = session.query(Country).filter(
+            Country.title == form.type.data).first()
+
         country_id = country.id
         date = datetime.datetime.now()
         images = request.files.getlist('images')
@@ -352,7 +365,9 @@ def add_cloth():
             length=form.length.data,
             price=form.price.data,
             date=date,
-            country_id=country_id
+            country_id=country_id,
+            cloth_type_id=type_id,
+            cloth_type_by_usage_id=usage_id
         )
         session.add(cloth)
         session.commit()
@@ -369,11 +384,16 @@ def edit_cloth(cloth_id):
         session = db_session.create_session()
         cloth = session.query(Cloth).filter(Cloth.id == cloth_id).first()
         if cloth:
+            usage = get(API_SERVER + f'/usage/{cloth.cloth_type_by_usage_id}').json()
+            type_of_cloth = get(API_SERVER + f'/types/{cloth.cloth_type_id}').json()
+
             form.title.data = cloth.title
             form.description.data = cloth.description
             form.colors.data = cloth.colors
             form.length.data = cloth.length
             form.price.data = cloth.price
+            form.usage.data = usage.get('title', '')
+            form.type.data = type_of_cloth.get('title', '')
             country = session.query(Country).filter(Country.title == cloth.country_id).first()
             form.country.data = country
         else:
@@ -389,6 +409,10 @@ def edit_cloth(cloth_id):
                 session.commit()
                 country = session.query(Country).filter(Country.title == form.country.data).first()
             country_id = country.id
+            usage_id = session.query(TypesClothsByUsage).filter(
+                TypesClothsByUsage.title == form.usage.data).first()
+            type_id = session.query(Country).filter(
+                Country.title == form.type.data).first()
             date = datetime.datetime.now()
             images = request.files.getlist('images')
             file_names = ';'.join(save_images(images))
@@ -401,6 +425,8 @@ def edit_cloth(cloth_id):
             cloth.length = form.length.data
             cloth.price = form.price.data
             cloth.country = country_id
+            cloth.cloth_type_by_usage_id = usage_id
+            cloth.cloth_type_id = type_id
             session.commit()
             return redirect('/')
         else:

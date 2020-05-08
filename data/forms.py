@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField, IntegerField, FieldList,
                      BooleanField, MultipleFileField, FloatField, TextAreaField)
-from wtforms.fields.html5 import EmailField
+from wtforms.fields.html5 import EmailField, SearchField
 from wtforms.validators import DataRequired, Email
 from data.validators import CheckStringFieldByDigit
 
@@ -52,3 +52,8 @@ class OrderRegistrationForm(FlaskForm):
     address = StringField('Адрес', validators=[DataRequired()])
     postal_code = StringField('Почтовый индекс', validators=[DataRequired()])
     submit = SubmitField('Подтвердить')
+
+
+class SearchForm(FlaskForm):
+    text = SearchField('Введите поисковый запрос', validators=[DataRequired()])
+    submit = SubmitField('Найти')

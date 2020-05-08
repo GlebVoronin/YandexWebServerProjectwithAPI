@@ -10,7 +10,8 @@ from data.models.cloths import Cloth
 from data.models.countries import Country
 from data.models.orders import Order
 from data.models.favourites import FavouriteItems
-from data.forms import RegisterForm, LoginForm, AddClothForm, OrderForm, OrderRegistrationForm
+from data.forms import (RegisterForm, LoginForm, AddClothForm,
+                        OrderForm, OrderRegistrationForm, SearchForm)
 from flask_login import (login_user, logout_user, login_required, LoginManager, current_user)
 from flask_restful import Api
 from resources import all_resources
@@ -113,22 +114,28 @@ def save_images(images: list):
     return list(reversed(file_names))
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POT'])
 def main_page():
     session = db_session.create_session()
-    cloths = list(session.query(Cloth).order_by(Cloth.date))
-    """!!!Возможно требуется reversed(list)!!!///////////////////////////////////////////////////////"""
+    search_form = SearchForm()
+    if search_form.validate_on_submit():
+        search = search_form.text.data
+        cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
+    else:
+        cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:
         cloths = cloths[:COUNT_OF_CLOTHS_BY_ONE_PAGE]  # тканей не страницу
-    countries_db = session.query(Country).all()
-    countries = {}
-    for country in countries_db:
-        if country.id not in countries:
-            countries[country.id] = country.title
+    cash_data_for_country = {}  # кэширование уже встречавшихся id
+    # Замена id страны на название
     for cloth in cloths:
-        cloth.country_id = countries.get(cloth.country_id, None)
+        if cloth.country_id not in cash_data_for_country:
+            country = get(API_SERVER + f'/countries{cloth.country_id}').json()
+            cloth.country_id = country.get('title', 'Неизвестно')
+            cash_data_for_country[cloth.country_id] = country.get('title', 'Неизвестно')
+        else:
+            cloth.country_id = cash_data_for_country[cloth.country_id]
 
-    return render_template('main_page.html', cloths=cloths)
+    return render_template('main_page.html', cloths=cloths, form=search_form)
 
 
 @app.route('/view/<int:cloth_id>')

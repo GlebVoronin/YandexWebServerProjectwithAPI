@@ -9,20 +9,33 @@
 <a class="buttons" href='/favourites'>Избранное</a>
 <a class="buttons" href='/order'>Заказ</a>
 {% endif %}
+<form action="" method="post" novalidate style="margin-left: 50px;">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.text.label }}<br>
+        {{ form.text(class="form-control") }}<br>
+        {% for error in form.text.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>{{ form.submit(type="submit", class="btn btn-primary", value="Найти") }}</p>
+</form>
 {% for cloth in cloths %}
 <a class="buttons" href="/view{{ cloth.get_url() }}">
-<div id="Cloth">
-    {{ cloth.title }}<br>
-    <img src="{{ cloth.get_images(False) }}"><br>
-    {{ cloth.colors }}<br>
-    {{ cloth.length }} метров осталось<br>
-    Цена за 1 метр: {{ cloth.price }} р.<br>
-    {{ cloth.country_id }}
-    {% if current_user.account_type == 'Администратор' %}
-    <a class="btn btn-primary " href="{{ cloth.get_url() }}">Редактировать</a>
-    <a class="btn btn-primary " href="/delete{{ cloth.get_url() }}">Удалить</a>
-    {% endif %}
-</div>
+    <div id="Cloth">
+        {{ cloth.title }}<br>
+        <img src="{{ cloth.get_images(False) }}"><br>
+        {{ cloth.colors }}<br>
+        {{ cloth.length }} метров осталось<br>
+        Цена за 1 метр: {{ cloth.price }} р.<br>
+        {{ cloth.country_id }}
+        {% if current_user.account_type == 'Администратор' %}
+        <a class="btn btn-primary " href="{{ cloth.get_url() }}">Редактировать</a>
+        <a class="btn btn-primary " href="/delete{{ cloth.get_url() }}">Удалить</a>
+        {% endif %}
+    </div>
 </a>
 {% endfor %}
 {% endblock %}

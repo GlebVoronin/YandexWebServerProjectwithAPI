@@ -114,7 +114,7 @@ def save_images(images: list):
     return list(reversed(file_names))
 
 
-@app.route('/', methods=['GET', 'POT'])
+@app.route('/', methods=['GET', 'POST'])
 def main_page():
     session = db_session.create_session()
     search_form = SearchForm()

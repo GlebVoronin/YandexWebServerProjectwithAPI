@@ -356,8 +356,8 @@ def add_cloth():
         # id типа ткани и его использования по базе данных
         usage_id = session.query(TypesClothsByUsage).filter(
             TypesClothsByUsage.title == form.usage.data).first()
-        type_id = session.query(Country).filter(
-            Country.title == form.type.data).first()
+        type_id = session.query(TypesCloths).filter(
+            TypesCloths.title == form.type.data).first()
 
         country_id = country.id
         date = datetime.datetime.now()
@@ -417,8 +417,8 @@ def edit_cloth(cloth_id):
             country_id = country.id
             usage_id = session.query(TypesClothsByUsage).filter(
                 TypesClothsByUsage.title == form.usage.data).first()
-            type_id = session.query(Country).filter(
-                Country.title == form.type.data).first()
+            type_id = session.query(TypesCloths).filter(
+                TypesCloths.title == form.type.data).first()
             date = datetime.datetime.now()
             images = request.files.getlist('images')
             file_names = ';'.join(save_images(images))

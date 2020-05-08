@@ -4,7 +4,7 @@ from wtforms import (StringField, PasswordField, SubmitField, IntegerField, Fiel
 from wtforms.fields.html5 import EmailField, SearchField
 from wtforms.validators import DataRequired, Email
 from data.validators import CheckStringFieldByDigit
-from data.db_session import create_session
+from data.db_session import create_session, global_init
 from data.models.cloth_groups_by_usage import TypesClothsByUsage
 from data.models.cloth_groups_by_types import TypesCloths
 
@@ -30,6 +30,8 @@ class LoginForm(FlaskForm):
 
 
 class AddClothForm(FlaskForm):
+    DB_NAME = 'Main'
+    global_init(f'db/{DB_NAME}.sqlite')
     session = create_session()
     types = [type_.title for type_ in session.query(TypesCloths).all()]
     usages = [usage.title for usage in session.query(TypesClothsByUsage).all()]

@@ -42,8 +42,8 @@ class AddClothForm(FlaskForm):
     length = FloatField('Доступная длина ткани (в метрах)', validators=[DataRequired()])
     price = IntegerField('Цена ткани (за 1 метр)', validators=[DataRequired()])
     country = StringField('Страна-производитель', validators=[DataRequired()])
-    usage = SelectField('Использование ткани', choices=usages, validators=[DataRequired()])
-    type = SelectField('Тип ткани', choices=types, validators=[DataRequired()])
+    usage = SelectField('Использование ткани', choices=usages, coerce=int, validators=[DataRequired()])
+    type = SelectField('Тип ткани', choices=types, coerce=int, validators=[DataRequired()])
     submit = SubmitField('Подтвердить')
 
 

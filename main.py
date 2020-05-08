@@ -19,7 +19,7 @@ from flask_login import (login_user, logout_user, login_required, LoginManager, 
 from flask_restful import Api
 from resources import all_resources
 
-CONFIG_FILE = './config.txt'
+CONFIG_FILE = 'config.txt'
 logging.basicConfig(
     level=logging.ERROR,
     filename='Log.log',
@@ -148,9 +148,9 @@ def main_page():
     # Замена id страны на название
     for cloth in cloths:
         if cloth.country_id not in cash_data_for_country:
-            country = get(API_SERVER + f'/countries{cloth.country_id}').json()
-            cloth.country_id = country.get('title', 'Неизвестно')
-            cash_data_for_country[cloth.country_id] = country.get('title', 'Неизвестно')
+            country = get('http://localhost:5000/api' + f'/countries/{cloth.country_id}').json()
+            cloth.country_id = country['Country'].get('title', 'Неизвестно')
+            cash_data_for_country[cloth.country_id] = country['Country'].get('title', 'Неизвестно')
         else:
             cloth.country_id = cash_data_for_country[cloth.country_id]
 
@@ -162,13 +162,13 @@ def view_cloth(cloth_id):
     cloth = find_cloth_by_id(cloth_id)
     country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
     if country:
-        cloth.country_id = country.get('title', 'Неизвестно')
+        cloth.country_id = country['Country'].get('title', 'Неизвестно')
     usage = get(API_SERVER + f'/usage/{cloth.cloth_type_by_usage_id}').json()
     if usage:
-        cloth.cloth_type_by_usage_id = usage.get('title', 'Неизвестно')
+        cloth.cloth_type_by_usage_id = usage['TypesClothsByUsage'].get('title', 'Неизвестно')
     type_cloth = get(API_SERVER + f'/types/{cloth.cloth_type_id}').json()
     if type_cloth:
-        cloth.cloth_type_id = type_cloth.get('title', 'Неизвестно')
+        cloth.cloth_type_id = type_cloth['TypesCloths'].get('title', 'Неизвестно')
     return render_template('view_cloth.html', cloth=cloth)
 
 
@@ -392,8 +392,8 @@ def edit_cloth(cloth_id):
             form.colors.data = cloth.colors
             form.length.data = cloth.length
             form.price.data = cloth.price
-            form.usage.data = usage.get('title', '')
-            form.type.data = type_of_cloth.get('title', '')
+            form.usage.data = usage['TypesClothsByUsage'].get('title', '')
+            form.type.data = type_of_cloth['TypesCloths'].get('title', '')
             country = session.query(Country).filter(Country.title == cloth.country_id).first()
             form.country.data = country
         else:

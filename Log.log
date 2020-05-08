@@ -251,3 +251,116 @@ TypeError: get() takes no keyword arguments
 2020-05-09 02:45:52,931 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:45:52] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-09 02:46:17,131 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-09 02:46:22,921 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:46:22] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:51:53,203 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 02:51:55,583 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:51:55] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:51:57,482 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:51:57] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:51:57,781 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:51:57] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:51:59,512 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:51:59] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:51:59,817 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:51:59] "[37mGET /api/countries/2 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:01,544 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:01] "[37mGET /api/countries/2 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:01,858 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:01] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:03,576 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:03] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:03,890 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:03] "[37mGET /api/countries/3 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:05,605 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:05] "[37mGET /api/countries/3 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:05,934 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:05] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:06,002 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:06] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 02:52:07,638 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:07] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:52:07,653 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:07] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 02:52:29,804 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 02:52:44,930 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:52:44] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:53:30,222 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 02:53:33,439 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:33] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:53:33,452 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 152, in main_page
+    cloth.country_id = country.get('title', default='Неизвестно')
+TypeError: get() takes no keyword arguments
+2020-05-09 02:53:33,479 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:33] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-09 02:53:34,381 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:34] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:53:34,399 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 152, in main_page
+    cloth.country_id = country.get('title', default='Неизвестно')
+TypeError: get() takes no keyword arguments
+2020-05-09 02:53:34,407 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:34] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-09 02:53:39,114 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:39] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:53:39,128 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 152, in main_page
+    cloth.country_id = country.get('title', default='Неизвестно')
+TypeError: get() takes no keyword arguments
+2020-05-09 02:53:39,134 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:39] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-09 02:53:54,289 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 02:53:56,598 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:56] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:53:56,611 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 152, in main_page
+    cloth.country_id = country.get('title', default='Неизвестно')
+TypeError: get() takes no keyword arguments
+2020-05-09 02:53:56,633 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:53:56] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-09 02:55:14,234 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 02:55:20,490 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:55:20] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:40,509 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 02:57:45,776 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:45] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:47,809 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:47] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:49,844 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:49] "[37mGET /api/countries/2 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:51,880 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:51] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:53,923 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:53] "[37mGET /api/countries/3 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:55,956 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:55] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
+2020-05-09 02:57:56,020 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:56] "[37mGET / HTTP/1.1[0m" 200 -

@@ -5,3 +5,13 @@
 2020-05-09 01:24:39,466 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:24:39] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-09 01:24:42,903 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:24:42] "[37mGET /register HTTP/1.1[0m" 200 -
 2020-05-09 01:25:01,426 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:25:01] "[37mPOST /register HTTP/1.1[0m" 200 -
+2020-05-09 01:26:33,116 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 01:26:49,517 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:26:49] "[32mPOST /register HTTP/1.1[0m" 302 -
+2020-05-09 01:26:49,609 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:26:49] "[37mGET /login HTTP/1.1[0m" 200 -
+2020-05-09 01:26:55,869 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:26:55] "[32mPOST /login HTTP/1.1[0m" 302 -
+2020-05-09 01:26:55,945 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:26:55] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 01:27:00,162 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:27:00] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-09 01:27:02,161 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:27:02] "[37mGET /add_cloth HTTP/1.1[0m" 200 -
+2020-05-09 01:28:14,147 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 01:28:18,367 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:28:18] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 01:28:19,828 INFO werkzeug 127.0.0.1 - - [09/May/2020 01:28:19] "[37mGET /add_cloth HTTP/1.1[0m" 200 -

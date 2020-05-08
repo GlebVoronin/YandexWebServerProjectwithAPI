@@ -4,6 +4,9 @@ from wtforms import (StringField, PasswordField, SubmitField, IntegerField, Fiel
 from wtforms.fields.html5 import EmailField, SearchField
 from wtforms.validators import DataRequired, Email
 from data.validators import CheckStringFieldByDigit
+from data.db_session import create_session
+from data.models.cloth_groups_by_usage import TypesClothsByUsage
+from data.models.cloth_groups_by_types import TypesCloths
 
 
 class RegisterForm(FlaskForm):
@@ -27,6 +30,9 @@ class LoginForm(FlaskForm):
 
 
 class AddClothForm(FlaskForm):
+    session = create_session()
+    types = [type_.title for type_ in session.query(TypesCloths).all()]
+    usages = [usage.title for usage in session.query(TypesClothsByUsage).all()]
     title = StringField('Название', validators=[DataRequired()])
     description = TextAreaField('Описание', validators=[DataRequired()])
     images = MultipleFileField('Фотографии')
@@ -34,8 +40,8 @@ class AddClothForm(FlaskForm):
     length = FloatField('Доступная длина ткани (в метрах)', validators=[DataRequired()])
     price = IntegerField('Цена ткани (за 1 метр)', validators=[DataRequired()])
     country = StringField('Страна-производитель', validators=[DataRequired()])
-    usage = SelectField('Использование ткани', choices=[], validators=[DataRequired()])
-    type = SelectField('Тип ткани', choices=[], validators=[DataRequired()])
+    usage = SelectField('Использование ткани', choices=usages, validators=[DataRequired()])
+    type = SelectField('Тип ткани', choices=types, validators=[DataRequired()])
     submit = SubmitField('Подтвердить')
 
 

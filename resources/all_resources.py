@@ -59,7 +59,7 @@ def check_api_key(api_key, name_class_of_model, get_request=False):
     и для любых запросов к моделям пользователей
     """
     if 'user' in name_class_of_model.lower() or not get_request:
-        if api_key:
+        if not api_key:
             return jsonify({'message': 'Not found api key'})
         elif not check_password_hash(ADMINISTRATOR_PASSWORD_HASH, api_key):
             return jsonify({'message': 'Wrong api key'})

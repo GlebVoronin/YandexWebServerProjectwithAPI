@@ -17,6 +17,10 @@ from flask_restful import Api
 from resources import all_resources
 
 CONFIG_FILE = './config.txt'
+logging.basicConfig(
+    filename='Log.log',
+    format='%(asctime)s %(levelname)s %(name)s %(message)s'
+)
 DIVISOR = ';'
 ADMINISTRATOR_PASSWORD = 'r651I45H5P3Za45s'
 COUNT_OF_CLOTHS_BY_ONE_PAGE = 30
@@ -83,34 +87,38 @@ def administrator_required(page_function):
 
 def save_images(images: list):
     """Функция сохраняет изображения на сервере, возвращает имена файлов"""
-    config_file = open(CONFIG_FILE, 'r', encoding='utf-8')
-    """Индекс последнего изображения в config-файле"""
-    index_data, other_data = list(), list()
-    for line in config_file.readlines():
-        if 'IMAGES_INDEX' in line:
-            index_data.append(line)
-        else:
-            other_data.append(line)
-    image_index = int(index_data[0].split('==')[1])
-    config_file.close()
-    for index, image in enumerate(images):
-        file = open(f'./static/img/cloth/image_{image_index}.png', 'wb')
-        file.write(image.stream.read())
-        file.close()
-        image = Image.open(f'./static/img/cloth/image_{image_index}.png')
-        image = image.resize((1024, 1024), Image.LANCZOS)
-        if index == 0:
-            image.save(f'./static/img/cloth/image_{image_index + 1}.png')
-            image = image.resize((256, 256), Image.LANCZOS)
-            image.save(f'./static/img/cloth/image_{image_index}.png')
-            image_index += 2
-        else:
-            image_index += 1
-    config_file = open(CONFIG_FILE, 'w', encoding='utf-8')
-    other_data.append(f'\nIMAGES_INDEX=={image_index}')  # обновление индекса последнего изображения
-    config_file.writelines(other_data)
-    config_file.close()
-    file_names = [f'/static/img/cloth/image_{image_index - i - 1}.png' for i in range(len(images) + 1)]
+    try:
+        config_file = open(CONFIG_FILE, 'r', encoding='utf-8')
+        """Индекс последнего изображения в config-файле"""
+        index_data, other_data = list(), list()
+        for line in config_file.readlines():
+            if 'IMAGES_INDEX' in line:
+                index_data.append(line)
+            else:
+                other_data.append(line)
+        image_index = int(index_data[0].split('==')[1])
+        config_file.close()
+        for index, image in enumerate(images):
+            file = open(f'./static/img/cloth/image_{image_index}.png', 'wb')
+            file.write(image.stream.read())
+            file.close()
+            image = Image.open(f'./static/img/cloth/image_{image_index}.png')
+            image = image.resize((1024, 1024), Image.LANCZOS)
+            if index == 0:
+                image.save(f'./static/img/cloth/image_{image_index + 1}.png')
+                image = image.resize((256, 256), Image.LANCZOS)
+                image.save(f'./static/img/cloth/image_{image_index}.png')
+                image_index += 2
+            else:
+                image_index += 1
+        config_file = open(CONFIG_FILE, 'w', encoding='utf-8')
+        other_data.append(f'\nIMAGES_INDEX=={image_index}')  # обновление индекса последнего изображения
+        config_file.writelines(other_data)
+        config_file.close()
+        file_names = [f'/static/img/cloth/image_{image_index - i - 1}.png' for i in range(len(images) + 1)]
+    except Exception as error:
+        logging.error(error)
+        file_names = ''
     return list(reversed(file_names))
 
 
@@ -469,4 +477,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
+    # app.run()
     app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

@@ -33,8 +33,8 @@ class AddClothForm(FlaskForm):
     DB_NAME = 'Main'
     global_init(f'db/{DB_NAME}.sqlite')
     session = create_session()
-    types = [type_.title for type_ in session.query(TypesCloths).all()]
-    usages = [usage.title for usage in session.query(TypesClothsByUsage).all()]
+    types = [(type_.id, type_.title) for type_ in session.query(TypesCloths).all()]
+    usages = [(usage.id, usage.title) for usage in session.query(TypesClothsByUsage).all()]
     title = StringField('Название', validators=[DataRequired()])
     description = TextAreaField('Описание', validators=[DataRequired()])
     images = MultipleFileField('Фотографии')

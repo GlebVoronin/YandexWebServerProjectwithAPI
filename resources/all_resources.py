@@ -7,11 +7,15 @@ from data.models.cloths import Cloth
 from data.models.countries import Country
 from data.models.orders import Order
 from data.models.favourites import FavouriteItems
+from data.models.cloth_groups_by_usage import TypesClothsByUsage
+from data.models.cloth_groups_by_types import TypesCloths
 from parsers.user_parser import parser as user_parser
 from parsers.cloth_parser import parser as cloth_parser
 from parsers.order_parser import parser as order_parser
 from parsers.favourite_parser import parser as favourite_parser
 from parsers.country_parser import parser as country_parser
+from parsers.cloth_group_by_type_parser import parser as cloths_type_parser
+from parsers.cloth_group_by_usage_parser import parser as cloths_usage_parser
 
 DICT_OF_ARGUMENTS_FOR_MODELS = {'User': ('id', 'surname', 'name', 'middle_name',
                                          'email', 'phone_number', 'address', 'postal_code',
@@ -21,12 +25,16 @@ DICT_OF_ARGUMENTS_FOR_MODELS = {'User': ('id', 'surname', 'name', 'middle_name',
                                           'length', 'price', 'date', 'country_id'),
                                 'Order': ('id', 'items_id', 'is_finished', 'status'),
                                 'FavouriteItems': ('id', 'items_id'),
-                                'Country': ('id', 'title')}
+                                'Country': ('id', 'title'),
+                                'TypesCloths': ('id', 'title'),
+                                'TypesClothsByUsage': ('id', 'title')}
 DICT_OF_PARSERS = {'User': user_parser,
                    'Cloth': cloth_parser,
                    'Order': order_parser,
                    'FavouriteItems': favourite_parser,
-                   'Country': country_parser}
+                   'Country': country_parser,
+                   'TypesCloths': cloths_type_parser,
+                   'TypesClothsByUsage': cloths_usage_parser}
 
 """Классы должны быть созданы с помощью метакласса.
 Создание объектов базовых классов не предусмотрено,
@@ -156,3 +164,7 @@ FavouriteItemsResource = MetaClass(FavouriteItems)
 FavouriteItemsListResource = MetaClass(FavouriteItems, True)
 CountryResource = MetaClass(Country)
 CountryListResource = MetaClass(Country, True)
+TypesClothsResource = MetaClass(TypesCloths)
+TypesClothsListResource = MetaClass(TypesCloths, True)
+TypesClothsByUsageResource = MetaClass(TypesClothsByUsage)
+TypesClothsByUsageListResource = MetaClass(TypesClothsByUsage, True)

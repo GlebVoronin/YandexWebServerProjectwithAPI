@@ -2,6 +2,7 @@ import datetime
 from PIL import Image
 import logging
 import os
+from werkzeug.security import check_password_hash
 from requests import get, post, delete, put, patch
 from flask import (Flask, request, abort, render_template, redirect, jsonify, make_response)
 from data import db_session
@@ -23,7 +24,10 @@ logging.basicConfig(
     format='%(asctime)s %(levelname)s %(name)s %(message)s'
 )
 DIVISOR = ';'
-ADMINISTRATOR_PASSWORD = 'r651I45H5P3Za45s'
+config_file = open(CONFIG_FILE, 'r')
+ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
+ADMINISTRATOR_PASSWORD_HASH = ''.join(ADMINISTRATOR_PASSWORD_HASH).split('==')[1].strip()
+config_file.close()
 COUNT_OF_CLOTHS_BY_ONE_PAGE = 30
 DB_NAME = 'Main'
 app = Flask(__name__)
@@ -455,7 +459,7 @@ def register():
             order=order,
             favourites=favourite_items)
         if form.password.data != form.password_repeat.data:
-            if form.password_repeat.data != ADMINISTRATOR_PASSWORD:
+            if check_password_hash(ADMINISTRATOR_PASSWORD_HASH, form.password_repeat.data):
                 return render_template('register.html', title='Регистрация',
                                        form=form,
                                        message="Пароли не совпадают")

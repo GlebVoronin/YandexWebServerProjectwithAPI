@@ -183,12 +183,21 @@ def view_cloth(cloth_id):
     country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
     if country:
         cloth.country_id = country['Country'].get('title', 'Неизвестно')
-    usage = get(API_SERVER + f'/usage/{cloth.cloth_type_by_usage_id}').json()
-    if usage:
-        cloth.cloth_type_by_usage_id = usage['TypesClothsByUsage'].get('title', 'Неизвестно')
-    type_cloth = get(API_SERVER + f'/types/{cloth.cloth_type_id}').json()
-    if type_cloth:
-        cloth.cloth_type_id = type_cloth['TypesCloths'].get('title', 'Неизвестно')
+    # Получение названий типов использования ткани
+    usages_id = [int(usage_id) for usage_id in cloth.cloth_type_by_usage_id.split(DIVISOR)]
+    usages_titles = []
+    for usage_id in usages_id:
+        usage = get(API_SERVER + f'/usage/{usage_id}').json()  # получение данных по api
+        if 'error' not in usage:
+            usages_titles.append(usage['TypesClothsByUsage'].get('title', 'Неизвестно'))
+    cloth.cloth_type_by_usage_id = ', '.join(usages_titles)
+    types_id = [int(type_id) for type_id in cloth.cloth_type_id.split(DIVISOR)]
+    types_titles = []
+    for type_id in types_id:
+        type_of_cloth = get(API_SERVER + f'/types/{type_id}').json()  # получение данных по api
+        if 'error' not in type_of_cloth:
+            types_titles.append(type_of_cloth['TypesCloths'].get('title', 'Неизвестно'))
+    cloth.cloth_type_id = ', '.join(types_titles)
     return render_template('view_cloth.html', cloth=cloth)
 
 

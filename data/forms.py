@@ -68,8 +68,10 @@ class SearchForm(FlaskForm):
     DB_NAME = 'Main'
     global_init(f'db/{DB_NAME}.sqlite')
     session = create_session()
-    types = [(type_.id, type_.title) for type_ in session.query(TypesCloths).all()]
-    usages = [(usage.id, usage.title) for usage in session.query(TypesClothsByUsage).all()]
+    types = [(0, 'Все')]
+    usages = [(0, 'Все')]
+    types.extend([(type_.id, type_.title) for type_ in session.query(TypesCloths).all()])
+    usages.extend([(usage.id, usage.title) for usage in session.query(TypesClothsByUsage).all()])
     text = SearchField('Введите поисковый запрос')
     usage = SelectField('Использование ткани', choices=usages, coerce=int)
     type = SelectField('Тип ткани', choices=types, coerce=int)

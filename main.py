@@ -141,14 +141,18 @@ def main_page():
         search = search_form.text.data
         usage_id = search_form.usage.data
         type_of_cloth_id = search_form.type.data
+        cloths = list(session.query(Cloth).all())
+        cloths_id = [cloth.id for cloth in cloths]
         if search:
             cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
-        elif usage_id:
-            cloths = list(session.query(Cloth).filter(Cloth.cloth_type_by_usage_id == usage_id))
-        elif type_of_cloth_id:
-            cloths = list(session.query(Cloth).filter(Cloth.cloth_type_id == type_of_cloth_id))
-        else:
-            cloths = list(session.query(Cloth).all())
+            cloths_id = [cloth.id for cloth in cloths]
+        if usage_id:
+            cloths = list(session.query(Cloth).filter(
+                Cloth.cloth_type_by_usage_id == usage_id and Cloth.id.in_(cloths_id)))
+            cloths_id = [cloth.id for cloth in cloths]
+        if type_of_cloth_id:
+            cloths = list(session.query(Cloth).filter(
+                Cloth.cloth_type_id == type_of_cloth_id and Cloth.id.in_(cloths_id)))
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:

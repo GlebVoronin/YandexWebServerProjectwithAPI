@@ -123,7 +123,7 @@ def save_images(images: list):
             else:
                 image_index += 1
         config_file = open(CONFIG_FILE, 'w', encoding='utf-8')
-        other_data.append(f'\nIMAGES_INDEX=={image_index}')  # обновление индекса последнего изображения
+        other_data.append(f'IMAGES_INDEX=={image_index}')  # обновление индекса последнего изображения
         config_file.writelines(other_data)
         config_file.close()
         file_names = [f'/static/img/cloth/image_{image_index - i - 1}.png' for i in range(len(images) + 1)]
@@ -540,5 +540,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    app.run()
-    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    # app.run()
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

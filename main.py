@@ -138,19 +138,26 @@ def main_page():
     session = db_session.create_session()
     search_form = SearchForm()
     if search_form.validate_on_submit():
+        # Поиск по категориям и названию.
+        # Проверяется соответствие к названию, использованию и типу ткани
+        # При совпадении всех показателей - ткань соответствует фильтру
         search = search_form.text.data
         usage_id = search_form.usage.data
         type_of_cloth_id = search_form.type.data
         cloths = list(session.query(Cloth).all())
+        # id всех тканей
         cloths_id = [cloth.id for cloth in cloths]
         if search:
+            # посик по имени, затем обновление списка id тканей
             cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
             cloths_id = [cloth.id for cloth in cloths]
         if usage_id:
+            # поиск по использованию и проверка на наличие в списке id, обновление id
             cloths = list(session.query(Cloth).filter(
                 Cloth.cloth_type_by_usage_id == usage_id, Cloth.id.in_(cloths_id)))
             cloths_id = [cloth.id for cloth in cloths]
         if type_of_cloth_id:
+            # поиск по типу и проверка на наличие в списке id
             cloths = list(session.query(Cloth).filter(
                 Cloth.cloth_type_id == type_of_cloth_id, Cloth.id.in_(cloths_id)))
     else:

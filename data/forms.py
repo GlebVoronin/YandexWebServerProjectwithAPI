@@ -1,6 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import (StringField, PasswordField, SubmitField, IntegerField, FieldList,
-                     BooleanField, MultipleFileField, FloatField, TextAreaField, SelectField)
+                     BooleanField, MultipleFileField, FloatField, TextAreaField, SelectField,
+                     SelectMultipleField)
 from wtforms.fields.html5 import EmailField, SearchField
 from wtforms.validators import DataRequired, Email
 from data.validators import CheckStringFieldByDigit
@@ -33,8 +34,8 @@ class AddClothForm(FlaskForm):
     DB_NAME = 'Main'
     global_init(f'db/{DB_NAME}.sqlite')
     session = create_session()
-    types = [(type_.id, type_.title) for type_ in session.query(TypesCloths).all()]
-    usages = [(usage.id, usage.title) for usage in session.query(TypesClothsByUsage).all()]
+    types = [(str(type_.id), type_.title) for type_ in session.query(TypesCloths).all()]
+    usages = [(str(usage.id), usage.title) for usage in session.query(TypesClothsByUsage).all()]
     title = StringField('Название', validators=[DataRequired()])
     description = TextAreaField('Описание', validators=[DataRequired()])
     images = MultipleFileField('Фотографии')
@@ -42,8 +43,10 @@ class AddClothForm(FlaskForm):
     length = FloatField('Доступная длина ткани (в метрах)', validators=[DataRequired()])
     price = IntegerField('Цена ткани (за 1 метр)', validators=[DataRequired()])
     country = StringField('Страна-производитель', validators=[DataRequired()])
-    usage = SelectField('Использование ткани', choices=usages, coerce=int, validators=[DataRequired()])
-    type = SelectField('Тип ткани', choices=types, coerce=int, validators=[DataRequired()])
+    usage = SelectMultipleField(
+        'Использование ткани', choices=usages, validators=[DataRequired()])
+    type = SelectMultipleField(
+        'Тип ткани', choices=types, validators=[DataRequired()])
     submit = SubmitField('Подтвердить')
 
 

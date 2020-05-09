@@ -384,3 +384,427 @@ TypeError: get() takes no keyword arguments
 2020-05-09 20:20:31,252 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:31] "[37mPOST / HTTP/1.1[0m" 200 -
 2020-05-09 20:20:36,262 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:36] "[37mPOST / HTTP/1.1[0m" 200 -
 2020-05-09 20:20:40,219 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:40] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-09 20:36:05,113 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:36:15,996 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:36:15] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-09 20:36:19,132 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:36:19] "[37mGET /view/1 HTTP/1.1[0m" 200 -
+2020-05-09 20:36:24,353 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:36:24] "[37mGET /1 HTTP/1.1[0m" 200 -
+2020-05-09 20:38:15,284 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:38:15] "[37mPOST /1 HTTP/1.1[0m" 200 -
+2020-05-09 20:38:52,673 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:38:52] "[32mPOST /1 HTTP/1.1[0m" 302 -
+2020-05-09 20:38:54,665 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:38:54] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:38:54,787 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:38:54] "[37mGET /static/img/cloth/image_56.png HTTP/1.1[0m" 200 -
+2020-05-09 20:44:05,575 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:44:16,263 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:44:16] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:44:20,812 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:44:20] "[37mGET /add_cloth HTTP/1.1[0m" 200 -
+2020-05-09 20:44:44,395 ERROR main Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 415, in edit_cloth
+    form.usage.data = usage['TypesClothsByUsage'].get('title', '')
+KeyError: 'TypesClothsByUsage'
+2020-05-09 20:44:44,460 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:44:44] "[35m[1mGET /1 HTTP/1.1[0m" 500 -
+2020-05-09 20:46:40,992 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:46:49,697 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:46:49] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:46:55,096 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:46:55] "[37mGET /add_cloth HTTP/1.1[0m" 200 -
+2020-05-09 20:47:50,896 ERROR main Exception on /view/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 188, in view_cloth
+    cloth.cloth_type_by_usage_id = usage['TypesClothsByUsage'].get('title', 'Неизвестно')
+KeyError: 'TypesClothsByUsage'
+2020-05-09 20:47:50,906 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:47:50] "[35m[1mGET /view/1 HTTP/1.1[0m" 500 -
+2020-05-09 20:48:08,933 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:48:14,386 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:48:14] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:48:15,943 ERROR main Exception on /view/1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 188, in view_cloth
+    cloth.cloth_type_by_usage_id = usage['TypesClothsByUsage'].get('title', 'Неизвестно')
+KeyError: 'TypesClothsByUsage'
+2020-05-09 20:48:15,949 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:48:15] "[35m[1mGET /view/1 HTTP/1.1[0m" 500 -
+2020-05-09 20:49:21,232 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:49:41,637 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:49:41] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:49:45,593 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:49:45] "[37mGET /view/4 HTTP/1.1[0m" 200 -
+2020-05-09 20:50:34,846 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:50:35,894 ERROR main Exception on /4 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 454, in edit_cloth
+    return render_template('add_cloth.html', title='Редактирование ткани', form=form)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\add_cloth.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base.html", line 1, in top-level template code
+    {% extends "base_without_auth_block.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base_without_auth_block.html", line 17, in top-level template code
+    {% block main %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\add_cloth.html", line 75, in block "main"
+    {{ form.usage(class="form-control") }}<br>
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 488, in iter_choices
+    selected = self.data is not None and self.coerce(value) in self.data
+TypeError: 'in <string>' requires string as left operand, not int
+2020-05-09 20:50:36,033 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:50:36] "[35m[1mGET /4 HTTP/1.1[0m" 500 -
+2020-05-09 20:50:40,821 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:50:40] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:50:45,149 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:50:45] "[37mGET /view/4 HTTP/1.1[0m" 200 -
+2020-05-09 20:50:50,110 ERROR main Exception on /4 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 454, in edit_cloth
+    return render_template('add_cloth.html', title='Редактирование ткани', form=form)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\add_cloth.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base.html", line 1, in top-level template code
+    {% extends "base_without_auth_block.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base_without_auth_block.html", line 17, in top-level template code
+    {% block main %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\add_cloth.html", line 75, in block "main"
+    {{ form.usage(class="form-control") }}<br>
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 488, in iter_choices
+    selected = self.data is not None and self.coerce(value) in self.data
+TypeError: 'in <string>' requires string as left operand, not int
+2020-05-09 20:50:50,120 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:50:50] "[35m[1mGET /4 HTTP/1.1[0m" 500 -
+2020-05-09 20:53:55,038 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:54:06,050 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:54:06] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:54:08,689 ERROR main Exception on /4 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 454, in edit_cloth
+    return render_template('add_cloth.html', title='Редактирование ткани', form=form)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\add_cloth.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base.html", line 1, in top-level template code
+    {% extends "base_without_auth_block.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base_without_auth_block.html", line 17, in top-level template code
+    {% block main %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\add_cloth.html", line 84, in block "main"
+    {{ form.type(class="form-control") }}<br>
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 488, in iter_choices
+    selected = self.data is not None and self.coerce(value) in self.data
+TypeError: 'in <string>' requires string as left operand, not int
+2020-05-09 20:54:08,707 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:54:08] "[35m[1mGET /4 HTTP/1.1[0m" 500 -
+2020-05-09 20:54:50,840 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:54:55,614 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:54:55] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:54:58,520 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:54:58] "[37mGET /4 HTTP/1.1[0m" 200 -
+2020-05-09 20:55:07,273 ERROR main Exception on /1 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 415, in edit_cloth
+    form.usage.data = usage['TypesClothsByUsage'].get('title', '')
+KeyError: 'TypesClothsByUsage'
+2020-05-09 20:55:07,285 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:55:07] "[35m[1mGET /1 HTTP/1.1[0m" 500 -
+2020-05-09 20:55:19,755 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:55:22,897 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:55:22] "[32mGET /delete/1 HTTP/1.1[0m" 302 -
+2020-05-09 20:55:24,157 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:55:24] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:55:28,197 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:55:28] "[37mGET /add_cloth HTTP/1.1[0m" 200 -
+2020-05-09 20:56:39,583 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:56:39] "[37mPOST /add_cloth HTTP/1.1[0m" 200 -
+2020-05-09 20:57:36,433 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:57:55,590 ERROR main Exception on /add_cloth [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 8 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 393, in add_cloth
+    session.commit()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 8 - probably unsupported type.
+[SQL: INSERT INTO cloths (title, description, images_links, colors, length, price, date, country_id, cloth_type_id, cloth_type_by_usage_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Штапель', '100% хлопок', '/static/img/cloth/image_60.png;/static/img/cloth/image_61.png;/static/img/cloth/image_62.png;/static/img/cloth/image_63.png', 'Изумрудный', 40.9, 123, '2020-05-09', 4, ['49'], ['1', '23'])]
+(Background on this error at: http://sqlalche.me/e/rvf5)
+2020-05-09 20:57:55,846 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:57:55] "[35m[1mPOST /add_cloth HTTP/1.1[0m" 500 -
+2020-05-09 20:58:26,408 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:58:52,694 ERROR main Exception on /add_cloth [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.InterfaceError: Error binding parameter 8 - probably unsupported type.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 393, in add_cloth
+    session.commit()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1036, in commit
+    self.transaction.commit()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 503, in commit
+    self._prepare_impl()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 482, in _prepare_impl
+    self.session.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 245, in save_obj
+    insert,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1137, in _emit_insert_statements
+    statement, params
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1246, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 588, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.InterfaceError: (sqlite3.InterfaceError) Error binding parameter 8 - probably unsupported type.
+[SQL: INSERT INTO cloths (title, description, images_links, colors, length, price, date, country_id, cloth_type_id, cloth_type_by_usage_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('Штапель', '100% хлопок', '/static/img/cloth/image_64.png;/static/img/cloth/image_65.png;/static/img/cloth/image_66.png;/static/img/cloth/image_67.png', 'Изумрудный', 40.9, 123, '2020-05-09', 4, ['49'], ['1', '23'])]
+(Background on this error at: http://sqlalche.me/e/rvf5)
+2020-05-09 20:58:52,735 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:58:52] "[35m[1mPOST /add_cloth HTTP/1.1[0m" 500 -
+2020-05-09 20:59:33,050 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 21:09:01,856 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 21:09:13,414 INFO werkzeug 127.0.0.1 - - [09/May/2020 21:09:13] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 21:09:16,689 ERROR main Exception on /4 [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 407, in edit_cloth
+    usages_id = [usage_id for usage_id in cloth.cloth_type_by_usage_id.split(DIVISOR)]
+AttributeError: 'int' object has no attribute 'split'
+2020-05-09 21:09:16,703 INFO werkzeug 127.0.0.1 - - [09/May/2020 21:09:16] "[35m[1mGET /4 HTTP/1.1[0m" 500 -
+2020-05-09 21:14:47,380 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

@@ -386,8 +386,8 @@ def add_cloth():
             price=form.price.data,
             date=date,
             country_id=country_id,
-            cloth_type_id=form.type.data,
-            cloth_type_by_usage_id=form.usage.data
+            cloth_type_id=DIVISOR.join(form.type.data),
+            cloth_type_by_usage_id=DIVISOR.join(form.usage.data)
         )
         session.add(cloth)
         session.commit()
@@ -404,16 +404,15 @@ def edit_cloth(cloth_id):
         session = db_session.create_session()
         cloth = session.query(Cloth).filter(Cloth.id == cloth_id).first()
         if cloth:
-            usage = get(API_SERVER + f'/usage/{cloth.cloth_type_by_usage_id}').json()
-            type_of_cloth = get(API_SERVER + f'/types/{cloth.cloth_type_id}').json()
-
+            usages_id = [usage_id for usage_id in cloth.cloth_type_by_usage_id.split(DIVISOR)]
+            types_id = [type_id for type_id in cloth.cloth_type_id.split(DIVISOR)]
             form.title.data = cloth.title
             form.description.data = cloth.description
             form.colors.data = cloth.colors
             form.length.data = cloth.length
             form.price.data = cloth.price
-            form.usage.data = usage['TypesClothsByUsage'].get('title', '')
-            form.type.data = type_of_cloth['TypesCloths'].get('title', '')
+            form.usage.data = usages_id
+            form.type.data = types_id
             country = session.query(Country).filter(Country.title == cloth.country_id).first()
             form.country.data = country
         else:
@@ -429,10 +428,6 @@ def edit_cloth(cloth_id):
                 session.commit()
                 country = session.query(Country).filter(Country.title == form.country.data).first()
             country_id = country.id
-            usage_id = session.query(TypesClothsByUsage).filter(
-                TypesClothsByUsage.title == form.usage.data).first()
-            type_id = session.query(TypesCloths).filter(
-                TypesCloths.title == form.type.data).first()
             date = datetime.datetime.now()
             images = request.files.getlist('images')
             file_names = ';'.join(save_images(images))
@@ -445,8 +440,8 @@ def edit_cloth(cloth_id):
             cloth.length = form.length.data
             cloth.price = form.price.data
             cloth.country = country_id
-            cloth.cloth_type_by_usage_id = usage_id
-            cloth.cloth_type_id = type_id
+            cloth.cloth_type_by_usage_id = DIVISOR.join(form.type.data)
+            cloth.cloth_type_id = DIVISOR.join(form.type.data)
             session.commit()
             return redirect('/')
         else:
@@ -528,5 +523,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    # app.run()
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

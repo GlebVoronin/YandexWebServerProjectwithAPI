@@ -84,14 +84,14 @@ class SearchForm(FlaskForm):
         cloth_usages = cloth.cloth_type_by_usage_id.split(';')
         for _type in cloth_types:
             if _type not in cloths_types:
-                cloth_types[_type] = 1
+                cloths_types[_type] = 1
             else:
-                cloth_types[_type] += 1
+                cloths_types[_type] += 1
         for _usage in cloth_usages:
-            if _usage not in cloth_usages:
-                cloth_usages[_usage] = 1
+            if _usage not in cloths_usages:
+                cloths_usages[_usage] = 1
             else:
-                cloth_usages[_usage] += 1
+                cloths_usages[_usage] += 1
 
     types.extend(
         [(type_.id, type_.title + f'{cloths_types[str(type_.id)]} шт.')

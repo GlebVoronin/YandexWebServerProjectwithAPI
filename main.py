@@ -148,11 +148,11 @@ def main_page():
             cloths_id = [cloth.id for cloth in cloths]
         if usage_id:
             cloths = list(session.query(Cloth).filter(
-                Cloth.cloth_type_by_usage_id == usage_id and Cloth.id.in_(cloths_id)))
+                Cloth.cloth_type_by_usage_id == usage_id, Cloth.id.in_(cloths_id)))
             cloths_id = [cloth.id for cloth in cloths]
         if type_of_cloth_id:
             cloths = list(session.query(Cloth).filter(
-                Cloth.cloth_type_id == type_of_cloth_id and Cloth.id.in_(cloths_id)))
+                Cloth.cloth_type_id == type_of_cloth_id, Cloth.id.in_(cloths_id)))
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:

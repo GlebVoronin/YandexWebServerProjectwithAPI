@@ -367,3 +367,20 @@ TypeError: get() takes no keyword arguments
 2020-05-09 03:03:30,396 INFO werkzeug  * Running on http://0.0.0.0:33507/ (Press CTRL+C to quit)
 2020-05-09 03:03:51,871 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-09 03:03:56,599 INFO werkzeug 127.0.0.1 - - [09/May/2020 03:03:56] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:11:34,136 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:14:05,216 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/css/style_v36.css HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,375 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/img/cloth/image_39.png HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,395 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/img/cloth/image_52.png HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,405 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/img/cloth/image_30.png HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,439 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/img/cloth/image_44.png HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,443 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/img/cloth/image_48.png HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,463 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[36mGET /static/img/cloth/image_34.png HTTP/1.1[0m" 304 -
+2020-05-09 20:14:05,757 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:05] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-05-09 20:14:18,608 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:18] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-09 20:14:19,885 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:14:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:19:59,590 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 20:20:19,325 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 20:20:28,181 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:28] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-09 20:20:31,252 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:31] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-09 20:20:36,262 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:36] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-09 20:20:40,219 INFO werkzeug 127.0.0.1 - - [09/May/2020 20:20:40] "[37mPOST / HTTP/1.1[0m" 200 -

@@ -8,6 +8,7 @@ from data.validators import CheckStringFieldByDigit
 from data.db_session import create_session, global_init
 from data.models.cloth_groups_by_usage import TypesClothsByUsage
 from data.models.cloth_groups_by_types import TypesCloths
+from data.models.cloths import Cloth
 
 
 class RegisterForm(FlaskForm):
@@ -73,8 +74,33 @@ class SearchForm(FlaskForm):
     session = create_session()
     types = [(0, 'Все')]
     usages = [(0, 'Все')]
-    types.extend([(type_.id, type_.title) for type_ in session.query(TypesCloths).all()])
-    usages.extend([(usage.id, usage.title) for usage in session.query(TypesClothsByUsage).all()])
+    # подсчёт числа тканей по типам и использования тканей для отображения пользователю
+    # используются словари для возможности удобного прохода по списку тканей 1 раз
+    cloths_types = {}
+    cloths_usages = {}
+    cloths = session.query(Cloth).all()
+    for cloth in cloths:
+        cloth_types = cloth.cloth_type_id.split(';')
+        cloth_usages = cloth.cloth_type_by_usage_id.split(';')
+        for _type in cloth_types:
+            if _type not in cloths_types:
+                cloth_types[_type] = 1
+            else:
+                cloth_types[_type] += 1
+        for _usage in cloth_usages:
+            if _usage not in cloth_usages:
+                cloth_usages[_usage] = 1
+            else:
+                cloth_usages[_usage] += 1
+
+    types.extend(
+        [(type_.id, type_.title + f'{cloths_types[str(type_.id)]} шт.')
+         for type_ in session.query(TypesCloths).all()]
+    )
+    usages.extend(
+        [(usage_.id, usage_.title + f'{cloths_types[str(usage_.id)]} шт.')
+         for usage_ in session.query(TypesClothsByUsage).all()]
+    )
     text = SearchField('Введите поисковый запрос')
     usage = SelectField('Использование ткани', choices=usages, coerce=int)
     type = SelectField('Тип ткани', choices=types, coerce=int)

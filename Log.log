@@ -980,3 +980,49 @@ KeyError: 'TypesClothsByUsage'
 2020-05-09 23:58:22,684 INFO werkzeug 127.0.0.1 - - [09/May/2020 23:58:22] "[37mGET /view/3 HTTP/1.1[0m" 200 -
 2020-05-09 23:58:26,093 INFO werkzeug 127.0.0.1 - - [09/May/2020 23:58:26] "[37mGET /view/image?img=/static/img/cloth/image_84.png HTTP/1.1[0m" 200 -
 2020-05-09 23:58:26,187 INFO werkzeug 127.0.0.1 - - [09/May/2020 23:58:26] "[37mGET /static/img/cloth/image_84.png HTTP/1.1[0m" 200 -
+2020-05-10 00:19:46,242 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 00:19:53,571 ERROR main Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 723, in __getattr__
+    return getattr(self.comparator, key)
+AttributeError: 'Comparator' object has no attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 227, in __getattr__
+    return getattr(self.comparator, key)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 949, in __getattr__
+    return self._fallback_getattr(key)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\properties.py", line 312, in _fallback_getattr
+    return getattr(self.__clause_element__(), key)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 727, in __getattr__
+    % (type(self).__name__, type(self.comparator).__name__, key)
+AttributeError: Neither 'AnnotatedColumn' object nor 'Comparator' object has an attribute 'lower'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 152, in main_page
+    cloths = list(session.query(Cloth).filter(Cloth.title.lower().like(f'%{search.lower()}%')))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 236, in __getattr__
+    key,
+AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Cloth.title has an attribute 'lower'
+2020-05-10 00:19:53,752 INFO werkzeug 127.0.0.1 - - [10/May/2020 00:19:53] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2020-05-10 00:22:29,802 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 00:22:54,840 INFO werkzeug 127.0.0.1 - - [10/May/2020 00:22:54] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 00:22:54,957 INFO werkzeug 127.0.0.1 - - [10/May/2020 00:22:54] "[37mGET /static/css/style_v37.css HTTP/1.1[0m" 200 -

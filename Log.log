@@ -1029,3 +1029,152 @@ AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object a
 2020-05-10 00:24:14,978 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-10 00:24:19,516 INFO werkzeug 127.0.0.1 - - [10/May/2020 00:24:19] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-10 00:24:19,624 INFO werkzeug 127.0.0.1 - - [10/May/2020 00:24:19] "[37mGET /static/css/style_v38.css HTTP/1.1[0m" 200 -
+2020-05-10 01:22:42,776 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 01:22:52,110 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 139, in main_page
+    search_form = SearchForm()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\data\forms.py", line 98, in __init__
+    for type_ in session.query(TypesCloths).all()]
+  File "C:\Users\User\PycharmProjects\YandexWebProject\data\forms.py", line 98, in <listcomp>
+    for type_ in session.query(TypesCloths).all()]
+KeyError: '1'
+2020-05-10 01:22:52,150 INFO werkzeug 127.0.0.1 - - [10/May/2020 01:22:52] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 01:26:01,622 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 01:26:05,287 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 139, in main_page
+    search_form = SearchForm()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\data\forms.py", line 90, in __init__
+    cloths_types[_type] += 1
+KeyError: '49'
+2020-05-10 01:26:05,297 INFO werkzeug 127.0.0.1 - - [10/May/2020 01:26:05] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 01:27:01,538 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 01:27:25,818 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 185, in main_page
+    return render_template('main_page.html', cloths=cloths, form=search_form)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\main_page.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base.html", line 1, in top-level template code
+    {% extends "base_without_auth_block.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base_without_auth_block.html", line 17, in top-level template code
+    {% block main %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\main_page.html", line 12, in block "main"
+    {{ form.hidden_tag() }}
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_wtf\form.py", line 134, in hidden_tag
+    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_wtf\form.py", line 134, in <genexpr>
+    u'\n'.join(text_type(f) for f in hidden_fields(fields or self))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_wtf\form.py", line 124, in hidden_fields
+    for f in fields:
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\form.py", line 57, in __iter__
+    return iter(itervalues(self._fields))
+AttributeError: 'SearchForm' object has no attribute '_fields'
+2020-05-10 01:27:25,858 INFO werkzeug 127.0.0.1 - - [10/May/2020 01:27:25] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 01:59:20,509 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 01:59:35,233 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 185, in main_page
+    return render_template('main_page.html', cloths=cloths, form=search_form)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\main_page.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base.html", line 1, in top-level template code
+    {% extends "base_without_auth_block.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base_without_auth_block.html", line 17, in top-level template code
+    {% block main %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\main_page.html", line 24, in block "main"
+    {{ form.usage(class="form-control") }}<br>
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 155, in __call__
+    return self.meta.render_field(self, kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\meta.py", line 56, in render_field
+    return field.widget(field, **render_kw)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\widgets\core.py", line 323, in __call__
+    for val, label, selected in field.iter_choices():
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\wtforms\fields\core.py", line 454, in iter_choices
+    for value, label in self.choices:
+TypeError: cannot unpack non-iterable int object
+2020-05-10 01:59:35,256 INFO werkzeug 127.0.0.1 - - [10/May/2020 01:59:35] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 02:16:18,741 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 02:16:26,790 INFO werkzeug 127.0.0.1 - - [10/May/2020 02:16:26] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 02:16:26,919 INFO werkzeug 127.0.0.1 - - [10/May/2020 02:16:26] "[37mGET /static/css/style_v39.css HTTP/1.1[0m" 200 -

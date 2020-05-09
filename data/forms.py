@@ -74,33 +74,25 @@ class SearchForm(FlaskForm):
     session = create_session()
     types = [(0, 'Все')]
     usages = [(0, 'Все')]
+    types_length = session.query(TypesCloths).count()
+    usages_length = session.query(TypesClothsByUsage).count()
     # подсчёт числа тканей по типам и использования тканей для отображения пользователю
     # используются словари для возможности удобного прохода по списку тканей 1 раз
-    cloths_types = {}
-    cloths_usages = {}
+    cloths_types = {str(key_id): 0 for key_id in range(1, types_length + 1)}
+    cloths_usages = {str(key_id): 0 for key_id in range(1, usages_length + 1)}
     cloths = session.query(Cloth).all()
+    # заполнение словарей данными о количестве типов и использований тканей
     for cloth in cloths:
         cloth_types = cloth.cloth_type_id.split(';')
         cloth_usages = cloth.cloth_type_by_usage_id.split(';')
         for _type in cloth_types:
-            if _type not in cloths_types:
-                cloths_types[_type] = 1
-            else:
-                cloths_types[_type] += 1
+            cloths_types[_type] += 1
         for _usage in cloth_usages:
-            if _usage not in cloths_usages:
-                cloths_usages[_usage] = 1
-            else:
-                cloths_usages[_usage] += 1
-
-    types.extend(
-        [(type_.id, type_.title + f'{cloths_types[str(type_.id)]} шт.')
-         for type_ in session.query(TypesCloths).all()]
-    )
-    usages.extend(
-        [(usage_.id, usage_.title + f'{cloths_types[str(usage_.id)]} шт.')
-         for usage_ in session.query(TypesClothsByUsage).all()]
-    )
+            cloths_usages[_usage] += 1
+    for type_ in session.query(TypesCloths).all():
+        types.append((type_.id, type_.title + f': {cloths_types[str(type_.id)]}шт.'))
+    for usage_ in session.query(TypesClothsByUsage).all():
+        usages.append((usage_.id, usage_.title + f': {cloths_usages[str(usage_.id)]}шт.'))
     text = SearchField('Введите поисковый запрос')
     usage = SelectField('Использование ткани', choices=usages, coerce=int)
     type = SelectField('Тип ткани', choices=types, coerce=int)

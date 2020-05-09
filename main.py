@@ -152,14 +152,22 @@ def main_page():
             cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
             cloths_id = [cloth.id for cloth in cloths]
         if usage_id:
-            # поиск по использованию и проверка на наличие в списке id, обновление id
-            cloths = list(session.query(Cloth).filter(
-                Cloth.cloth_type_by_usage_id == usage_id, Cloth.id.in_(cloths_id)))
+            temp = []  # временный список тканей, для сортировки
+            for cloth in cloths:
+                # id типов использований ткани - список
+                cloth_usages_id = cloth.cloth_type_by_usage_id.split(DIVISOR)
+                if str(usage_id) in cloth_usages_id and cloth.id in cloths_id:
+                    temp.append(cloth)
+            cloths = temp.copy()
             cloths_id = [cloth.id for cloth in cloths]
         if type_of_cloth_id:
             # поиск по типу и проверка на наличие в списке id
-            cloths = list(session.query(Cloth).filter(
-                Cloth.cloth_type_id == type_of_cloth_id, Cloth.id.in_(cloths_id)))
+            temp = []  # временный список тканей, для сортировки
+            for cloth in cloths:
+                # id типов использований ткани - список
+                cloth_types_id = cloth.cloth_type_id.split(DIVISOR)
+                if str(usage_id) in cloth_types_id and cloth.id in cloths_id:
+                    temp.append(cloth)
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:
@@ -449,7 +457,7 @@ def edit_cloth(cloth_id):
             cloth.length = form.length.data
             cloth.price = form.price.data
             cloth.country = country_id
-            cloth.cloth_type_by_usage_id = DIVISOR.join(form.type.data)
+            cloth.cloth_type_by_usage_id = DIVISOR.join(form.usage.data)
             cloth.cloth_type_id = DIVISOR.join(form.type.data)
             session.commit()
             return redirect('/')

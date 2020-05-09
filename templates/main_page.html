@@ -19,6 +19,24 @@
     </div>
     {% endfor %}
     </p>
+    <p>
+        {{ form.usage.label }}<br>
+        {{ form.usage(class="form-control") }}<br>
+        {% for error in form.usage.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
+    <p>
+        {{ form.type.label }}<br>
+        {{ form.type(class="form-control") }}<br>
+        {% for error in form.type.errors %}
+    <div class="alert alert-danger" role="alert">
+        {{ error }}
+    </div>
+    {% endfor %}
+    </p>
     <p>{{ form.submit(type="submit", class="btn btn-primary", value="Найти") }}</p>
 </form>
 {% for cloth in cloths %}

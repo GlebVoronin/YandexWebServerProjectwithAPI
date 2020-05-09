@@ -65,5 +65,12 @@ class OrderRegistrationForm(FlaskForm):
 
 
 class SearchForm(FlaskForm):
-    text = SearchField('Введите поисковый запрос', validators=[DataRequired()])
+    DB_NAME = 'Main'
+    global_init(f'db/{DB_NAME}.sqlite')
+    session = create_session()
+    types = [(type_.id, type_.title) for type_ in session.query(TypesCloths).all()]
+    usages = [(usage.id, usage.title) for usage in session.query(TypesClothsByUsage).all()]
+    text = SearchField('Введите поисковый запрос')
+    usage = SelectField('Использование ткани', choices=usages, coerce=int)
+    type = SelectField('Тип ткани', choices=types, coerce=int)
     submit = SubmitField('Найти')

@@ -364,3 +364,6 @@ TypeError: get() takes no keyword arguments
 2020-05-09 02:57:53,923 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:53] "[37mGET /api/countries/3 HTTP/1.1[0m" 200 -
 2020-05-09 02:57:55,956 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:55] "[37mGET /api/countries/1 HTTP/1.1[0m" 200 -
 2020-05-09 02:57:56,020 INFO werkzeug 127.0.0.1 - - [09/May/2020 02:57:56] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-09 03:03:30,396 INFO werkzeug  * Running on http://0.0.0.0:33507/ (Press CTRL+C to quit)
+2020-05-09 03:03:51,871 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-09 03:03:56,599 INFO werkzeug 127.0.0.1 - - [09/May/2020 03:03:56] "[37mGET / HTTP/1.1[0m" 200 -

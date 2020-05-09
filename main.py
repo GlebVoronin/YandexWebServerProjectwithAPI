@@ -139,7 +139,16 @@ def main_page():
     search_form = SearchForm()
     if search_form.validate_on_submit():
         search = search_form.text.data
-        cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
+        usage_id = search_form.usage.data
+        type_of_cloth_id = search_form.type.data
+        if search:
+            cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
+        elif usage_id:
+            cloths = list(session.query(Cloth).filter(Cloth.cloth_type_by_usage_id == usage_id))
+        elif type_of_cloth_id:
+            cloths = list(session.query(Cloth).filter(Cloth.cloth_type_id == type_of_cloth_id))
+        else:
+            cloths = list(session.query(Cloth).all())
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:

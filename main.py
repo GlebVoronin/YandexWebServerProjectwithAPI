@@ -148,7 +148,7 @@ def main_page():
     # Замена id страны на название
     for cloth in cloths:
         if cloth.country_id not in cash_data_for_country:
-            country = get('http://localhost:5000/api' + f'/countries/{cloth.country_id}').json()
+            country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
             cloth.country_id = country['Country'].get('title', 'Неизвестно')
             cash_data_for_country[cloth.country_id] = country['Country'].get('title', 'Неизвестно')
         else:

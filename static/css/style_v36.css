@@ -4,10 +4,10 @@ body {
 }
 
 #login {
-  background-color: #00ff00;
+  background-color: #a0ffa0;
 }
 #register {
-  background-color: #00ff00;
+  background-color: #a0ffa0;
 }
 #auth_block {
   width: 20%;
@@ -52,13 +52,13 @@ a:focus {
     text-decoration: underline;
 }
 a:active {
-    color: #00ff00;
+    color: #a0ffa0;
 }
 #buttons {
   width: 10%;
   height: 3%;
-  color: #00ff00;
-  background-color: #00ff00;
+  color: #a0ffa0;
+  background-color: #a0ffa0;
 }
 #main_page_img {
   border: 2px solid #e0fddf;
@@ -68,7 +68,7 @@ li {
   display: inline-block;
 }
 .btn-primary{
-  background-color: #00ff00;
+  background-color: #a0ffa0;
 }
 #Cloth {
   display: inline-block;

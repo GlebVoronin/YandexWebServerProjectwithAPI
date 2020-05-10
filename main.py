@@ -204,8 +204,10 @@ def main_page():
             cash_data_for_country[cloth.country_id] = country['Country'].get('title', 'Неизвестно')
         else:
             cloth.country_id = cash_data_for_country[cloth.country_id]
-
-    return render_template('main_page.html', cloths=cloths, form=search_form)
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+    administrator_email = administrator.email
+    return render_template('main_page.html', cloths=cloths,
+                           form=search_form, email=administrator_email)
 
 
 @app.route('/view/<int:cloth_id>')
@@ -580,7 +582,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    a = get(API_SERVER + '/users', json={'api_key': 'r651I45H5P3Za45s'}).json()
-    print(a)
-    app.run()
-    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    # app.run()
+    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

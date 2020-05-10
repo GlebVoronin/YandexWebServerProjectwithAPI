@@ -1616,3 +1616,12 @@ jinja2.exceptions.UndefinedError: 'float' is undefined
 2020-05-10 21:25:38,076 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:38] "[37mGET /user_orders HTTP/1.1[0m" 200 -
 2020-05-10 21:25:42,747 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:42] "[32mGET /order_finish/3 HTTP/1.1[0m" 302 -
 2020-05-10 21:25:42,801 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:42] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 22:02:13,534 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:02:38,877 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:03:00,516 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:05:14,675 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:14:10,024 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:16:25,917 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:17:06,415 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:17:28,119 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 22:20:08,430 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

@@ -18,8 +18,8 @@
     Адрес - {{ user_data[order.id].address }}<br>
     <br>
     Данные заказа:<br>
-    {% for item in order.items_id %}
-    {% if not loop.index.last %}
+    {% for item in order.items_id.split(";") %}
+    {% if not loop.last %}
     Id ткани: {{ item.split("/")[0] }}<br>
     Метров ткани: {{ item.split("/")[1] }}<br>
     Цена ткани: {{ item.split("/")[2] }}<br>

@@ -365,7 +365,7 @@ def view_order(form_data=[]):
             for index in range(len(items_id)):
                 price = session.query(Cloth).filter(Cloth.id == items_id[index]).first().price
                 new_data_for_items_id.append(
-                    f'{items_id[index]}/{form_data[0][index]}/{price}')
+                    f'{items_id[index]}/{form_data[0][index]}/{price}/{form_data[0][index] * price}')
                 summ += form_data[0][index] * price
             new_data_for_items_id.append(str(summ))
             order.items_id = DIVISOR.join(new_data_for_items_id)

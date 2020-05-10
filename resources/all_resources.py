@@ -17,7 +17,7 @@ from parsers.country_parser import parser as country_parser
 from parsers.cloth_group_by_type_parser import parser as cloths_type_parser
 from parsers.cloth_group_by_usage_parser import parser as cloths_usage_parser
 from werkzeug.security import check_password_hash
-from requests import request
+
 CONFIG_FILE = 'config.txt'
 config_file = open(CONFIG_FILE, 'r', encoding='utf-8')
 ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
@@ -137,9 +137,7 @@ class BaseListResource(Resource):
 
     def get(self):
         if 'user' in self.class_of_object.__name__.lower():
-            api_key = request.args.get('api_key', 'Null')
-            print(api_key)
-            # api_key = self.parser.parse_args().get('api_key', default=None)
+            api_key = self.parser.parse_args().get('api_key', default=None)
             check_api_key(api_key)
         session = db_session.create_session()
         objects = session.query(self.class_of_object).all()
@@ -186,8 +184,8 @@ def impossible_action(self, object_id):
 UserResource = MetaClass(User)
 setattr(UserResource, 'put', impossible_action)  # api не должно менять данные пользователя
 setattr(UserResource, 'delete', impossible_action)  # api не должно удалять пользователей
-UserListResource = MetaClass(User, True)  # api не должно регистрировать пользователей
-setattr(UserResource, 'post', impossible_action)
+UserListResource = MetaClass(User, True)
+setattr(UserListResource, 'post', impossible_action)  # api не должно регистрировать пользователей
 ClothResource = MetaClass(Cloth)
 ClothListResource = MetaClass(Cloth, True)
 OrderResource = MetaClass(Order)

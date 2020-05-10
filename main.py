@@ -19,10 +19,11 @@ from flask_login import (login_user, logout_user, login_required, LoginManager, 
 from flask_restful import Api
 from resources import all_resources
 
+LOG_FILE = 'Log.log'
 CONFIG_FILE = 'config.txt'
 logging.basicConfig(
     level=logging.ERROR,
-    filename='Log.log',
+    filename=LOG_FILE,
     format='%(asctime)s %(levelname)s %(name)s %(message)s'
 )
 DIVISOR = ';'
@@ -142,6 +143,13 @@ def view_user_orders():
     user_data = {order.id: session.query(User).filter(User.id == order.status.split('==')[1]).first()
                  for order in orders}
     return render_template('view_user_orders.html', orders=orders, user_data=user_data)
+
+
+@login_required
+@administrator_required
+@app.route('/view_logs')
+def view_logs():
+    return redirect(f'/{LOG_FILE}')
 
 
 @login_required

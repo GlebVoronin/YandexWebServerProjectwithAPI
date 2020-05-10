@@ -27,6 +27,7 @@
     <br>
     {% else %}
     Сумма заказа: {{ item }}
+    {% endif %}
     {% endfor %}
     <a class="btn-primary" href="/order_finish/{{ order.id }}">Отметить заказ как завершённый</a>
 </div>

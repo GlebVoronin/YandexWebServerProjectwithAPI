@@ -1806,3 +1806,519 @@ sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush;
 2020-05-10 23:12:30,742 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:12:30] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-10 23:13:12,127 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-10 23:13:20,288 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:13:20] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 23:25:12,111 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 23:25:19,766 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:25:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 23:25:30,029 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:25:30] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-10 23:25:31,154 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 215, in main_page
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3287, in first
+    ret = list(self[0:1])
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3065, in __getitem__
+    return list(res)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3388, in __iter__
+    self.session._autoflush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1597, in _autoflush
+    util.raise_from_cause(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1586, in _autoflush
+    self.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlite3.OperationalError) database is locked
+[SQL: UPDATE cloths SET country_id=? WHERE cloths.id = ?]
+[parameters: (('Польша', 1), ('Корея', 2), ('Корея', 3), ('Корея', 4), ('Корея', 5), ('Россия', 6), ('Корея', 7), ('Россия', 8)  ... displaying 10 of 14 total bound parameter sets ...  ('Корея', 13), ('Корея', 14))]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-05-10 23:25:31,176 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:25:31] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 23:25:33,689 ERROR main Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 215, in main_page
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3287, in first
+    ret = list(self[0:1])
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3065, in __getitem__
+    return list(res)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3388, in __iter__
+    self.session._autoflush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1597, in _autoflush
+    util.raise_from_cause(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1586, in _autoflush
+    self.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlite3.OperationalError) database is locked
+[SQL: UPDATE cloths SET country_id=? WHERE cloths.id = ?]
+[parameters: (('Польша', 1), ('Корея', 2), ('Корея', 3), ('Корея', 4), ('Корея', 5), ('Россия', 6), ('Корея', 7), ('Россия', 8)  ... displaying 10 of 14 total bound parameter sets ...  ('Корея', 13), ('Корея', 14))]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-05-10 23:25:33,695 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:25:33] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2020-05-10 23:25:38,099 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:25:38] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-10 23:25:51,885 ERROR main Exception on / [POST]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 215, in main_page
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3287, in first
+    ret = list(self[0:1])
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3065, in __getitem__
+    return list(res)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3388, in __iter__
+    self.session._autoflush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1597, in _autoflush
+    util.raise_from_cause(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1586, in _autoflush
+    self.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlite3.OperationalError) database is locked
+[SQL: UPDATE cloths SET country_id=? WHERE cloths.id = ?]
+[parameters: (('Польша', 1), ('Корея', 2), ('Корея', 3), ('Корея', 4), ('Корея', 5), ('Россия', 6), ('Корея', 7), ('Россия', 8)  ... displaying 10 of 14 total bound parameter sets ...  ('Корея', 13), ('Корея', 14))]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-05-10 23:25:51,890 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:25:51] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2020-05-10 23:30:15,825 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 23:31:57,829 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 23:32:05,818 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:32:05] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-10 23:32:10,001 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:32:10] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-10 23:32:17,177 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 213, in main_page
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3287, in first
+    ret = list(self[0:1])
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3065, in __getitem__
+    return list(res)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3388, in __iter__
+    self.session._autoflush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1597, in _autoflush
+    util.raise_from_cause(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1586, in _autoflush
+    self.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlite3.OperationalError) database is locked
+[SQL: UPDATE cloths SET country_id=? WHERE cloths.id = ?]
+[parameters: (('Польша', 1), ('Корея', 2), ('Корея', 3), ('Корея', 4), ('Корея', 5), ('Россия', 6), ('Корея', 7), ('Россия', 8)  ... displaying 10 of 14 total bound parameter sets ...  ('Корея', 13), ('Корея', 14))]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-05-10 23:32:17,201 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:32:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 23:32:37,520 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 23:32:42,324 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:32:42] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-10 23:33:46,113 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:33:46] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 23:33:56,900 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:33:56] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-10 23:34:58,574 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 213, in main_page
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3287, in first
+    ret = list(self[0:1])
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3065, in __getitem__
+    return list(res)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3388, in __iter__
+    self.session._autoflush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1597, in _autoflush
+    util.raise_from_cause(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1586, in _autoflush
+    self.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlite3.OperationalError) database is locked
+[SQL: UPDATE cloths SET country_id=? WHERE cloths.id = ?]
+[parameters: (('Польша', 1), ('Корея', 2), ('Корея', 3), ('Корея', 4), ('Корея', 5), ('Россия', 6), ('Корея', 7), ('Россия', 8)  ... displaying 10 of 14 total bound parameter sets ...  ('Корея', 13), ('Корея', 14))]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-05-10 23:34:58,629 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:34:58] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 23:34:59,029 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlite3.OperationalError: database is locked
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 213, in main_page
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3287, in first
+    ret = list(self[0:1])
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3065, in __getitem__
+    return list(res)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3388, in __iter__
+    self.session._autoflush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1597, in _autoflush
+    util.raise_from_cause(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1586, in _autoflush
+    self.flush()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2479, in flush
+    self._flush(objects)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2617, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 68, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 153, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\session.py", line 2577, in _flush
+    flush_context.execute()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 996, in _emit_update_statements
+    statement, multiparams
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 982, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1101, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1250, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1476, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\util\compat.py", line 152, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1226, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\sqlalchemy\engine\default.py", line 585, in do_executemany
+    cursor.executemany(statement, parameters)
+sqlalchemy.exc.OperationalError: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)
+(sqlite3.OperationalError) database is locked
+[SQL: UPDATE cloths SET country_id=? WHERE cloths.id = ?]
+[parameters: (('Польша', 1), ('Корея', 2), ('Корея', 3), ('Корея', 4), ('Корея', 5), ('Россия', 6), ('Корея', 7), ('Россия', 8)  ... displaying 10 of 14 total bound parameter sets ...  ('Корея', 13), ('Корея', 14))]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-05-10 23:34:59,052 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:34:59] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-10 23:36:02,177 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 23:36:06,987 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:36:06] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 23:36:08,846 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:36:08] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-10 23:36:10,787 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:36:10] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 23:36:12,566 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:36:12] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 23:36:14,660 INFO werkzeug 127.0.0.1 - - [10/May/2020 23:36:14] "[37mGET / HTTP/1.1[0m" 200 -

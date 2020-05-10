@@ -203,17 +203,16 @@ def main_page():
         cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:
         cloths = cloths[:COUNT_OF_CLOTHS_BY_ONE_PAGE]  # тканей не страницу
+    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
+    administrator_email = administrator.email
     cash_data_for_country = {}  # кэширование уже встречавшихся id
     # Замена id страны на название
     for cloth in cloths:
         if cloth.country_id not in cash_data_for_country:
             country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
-            cloth.country_id = country['Country'].get('title', 'Неизвестно')
             cash_data_for_country[cloth.country_id] = country['Country'].get('title', 'Неизвестно')
-        else:
-            cloth.country_id = cash_data_for_country[cloth.country_id]
-    administrator = session.query(User).filter(User.account_type == 'Администратор').first()
-    administrator_email = administrator.email
+        cloth.country_id = cash_data_for_country[cloth.country_id]
+
     return render_template('main_page.html', cloths=cloths,
                            form=search_form, email=administrator_email)
 

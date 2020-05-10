@@ -150,7 +150,9 @@ def view_user_orders():
 def order_make_finish(order_id):
     session = db_session.create_session()
     order = session.query(Order).filter(Order.id == order_id).first()
-    
+    order.is_finished = True
+    session.commit()
+    return redirect('/user_orders')
 
 
 @app.route('/', methods=['GET', 'POST'])

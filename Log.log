@@ -1181,3 +1181,26 @@ TypeError: cannot unpack non-iterable int object
 2020-05-10 02:17:32,570 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-10 02:17:39,436 INFO werkzeug 127.0.0.1 - - [10/May/2020 02:17:39] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-10 02:17:46,791 INFO werkzeug 127.0.0.1 - - [10/May/2020 02:17:46] "[37mPOST / HTTP/1.1[0m" 200 -
+2020-05-10 19:08:44,746 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 19:09:00,410 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 19:09:00,763 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/css/style_v39.css HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,802 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_68.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,817 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_77.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,831 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,848 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,860 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_90.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,878 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,890 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_99.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,895 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_103.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,947 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_107.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:00,956 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:00] "[36mGET /static/img/cloth/image_115.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:01,003 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:01] "[36mGET /static/img/cloth/image_119.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:01,034 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:01] "[36mGET /static/img/cloth/image_134.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:01,039 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:01] "[36mGET /static/img/cloth/image_123.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:01,051 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:01] "[36mGET /static/img/cloth/image_131.png HTTP/1.1[0m" 304 -
+2020-05-10 19:09:01,465 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:01] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-05-10 19:09:25,249 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:25] "[32mGET /logout HTTP/1.1[0m" 302 -
+2020-05-10 19:09:25,384 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:25] "[37mGET /login HTTP/1.1[0m" 200 -
+2020-05-10 19:09:26,537 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:09:26] "[37mGET /register HTTP/1.1[0m" 200 -
+2020-05-10 19:10:29,108 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 19:10:31,689 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:10:31] "[37mGET /register HTTP/1.1[0m" 200 -

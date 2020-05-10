@@ -135,7 +135,7 @@ def save_images(images: list):
 
 @login_required
 @administrator_required
-@app.route('/users_orders')
+@app.route('/user_orders')
 def view_user_orders():
     session = db_session.create_session()
     orders = session.query(Order).filter(Order.status.startswith('ожидает отправки,')).all()

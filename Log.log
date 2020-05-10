@@ -1214,3 +1214,7 @@ TypeError: cannot unpack non-iterable int object
 2020-05-10 21:01:05,148 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:01:05] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-10 21:02:08,467 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-10 21:02:16,351 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:02:16] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:03:33,199 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:03:41,538 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:03:41] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:03:41,658 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:03:41] "[37mGET /static/css/style_v40.css HTTP/1.1[0m" 200 -
+2020-05-10 21:03:52,611 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:03:52] "[33mGET /user_orders HTTP/1.1[0m" 404 -

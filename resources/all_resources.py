@@ -151,7 +151,7 @@ class BaseListResource(Resource):
         )
 
 
-class MetaClass(MethodViewType):
+class MetaClassForResources(MethodViewType):
     """
     Метакласс. Создаёт классы API по нужной модели на основе базовых
     см. BaseResource, BaseListResource
@@ -182,20 +182,20 @@ def impossible_action(self, object_id):
     return jsonify({'message': 'Impossible'})
 
 
-UserResource = MetaClass(User)
+UserResource = MetaClassForResources(User)
 setattr(UserResource, 'put', impossible_action)  # api не должно менять данные пользователя
 setattr(UserResource, 'delete', impossible_action)  # api не должно удалять пользователей
-UserListResource = MetaClass(User, True)
+UserListResource = MetaClassForResources(User, True)
 setattr(UserListResource, 'post', impossible_action)  # api не должно регистрировать пользователей
-ClothResource = MetaClass(Cloth)
-ClothListResource = MetaClass(Cloth, True)
-OrderResource = MetaClass(Order)
-OrderListResource = MetaClass(Order, True)
-FavouriteItemsResource = MetaClass(FavouriteItems)
-FavouriteItemsListResource = MetaClass(FavouriteItems, True)
-CountryResource = MetaClass(Country)
-CountryListResource = MetaClass(Country, True)
-TypesClothsResource = MetaClass(TypesCloths)
-TypesClothsListResource = MetaClass(TypesCloths, True)
-TypesClothsByUsageResource = MetaClass(TypesClothsByUsage)
-TypesClothsByUsageListResource = MetaClass(TypesClothsByUsage, True)
+ClothResource = MetaClassForResources(Cloth)
+ClothListResource = MetaClassForResources(Cloth, True)
+OrderResource = MetaClassForResources(Order)
+OrderListResource = MetaClassForResources(Order, True)
+FavouriteItemsResource = MetaClassForResources(FavouriteItems)
+FavouriteItemsListResource = MetaClassForResources(FavouriteItems, True)
+CountryResource = MetaClassForResources(Country)
+CountryListResource = MetaClassForResources(Country, True)
+TypesClothsResource = MetaClassForResources(TypesCloths)
+TypesClothsListResource = MetaClassForResources(TypesCloths, True)
+TypesClothsByUsageResource = MetaClassForResources(TypesClothsByUsage)
+TypesClothsByUsageListResource = MetaClassForResources(TypesClothsByUsage, True)

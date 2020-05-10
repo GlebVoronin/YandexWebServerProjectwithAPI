@@ -40,7 +40,8 @@
     </p>
     <p>{{ form.submit(type="submit", class="btn btn-primary", value="Найти") }}</p>
 </form>
-<div id="administrator_email">E-mail администратора сайта: {{ email }}<br>
+<div id="administrator_email">E-mail администратора сайта: {{ email }}</div>
+<br><br>
 {% for cloth in cloths %}
 <div id="Cloth">
     <a class="buttons" href="/view{{ cloth.get_url() }}">

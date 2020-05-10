@@ -190,6 +190,7 @@ def main_page():
                 cloth_types_id = cloth.cloth_type_id.split(DIVISOR)
                 if str(type_of_cloth_id) in cloth_types_id and cloth.id in cloths_id:
                     temp.append(cloth)
+            cloths = temp.copy()
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
     if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:

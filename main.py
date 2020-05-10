@@ -148,6 +148,8 @@ def view_user_orders():
 @administrator_required
 @app.route('/order_finish/<int:order_id>')
 def order_make_finish(order_id):
+    session = db_session.create_session()
+    order = session.query(Order).filter(Order.id == order_id).first()
     
 
 

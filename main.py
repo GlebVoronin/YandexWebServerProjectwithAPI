@@ -144,6 +144,11 @@ def view_user_orders():
     return render_template('view_user_orders.html', orders=orders, user_data=user_data)
 
 
+@login_required
+@administrator_required
+@app.route('/order_finish/<int:order_id>')
+def order_make_finish(order_id):
+    
 
 
 @app.route('/', methods=['GET', 'POST'])

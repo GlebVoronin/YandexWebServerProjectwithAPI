@@ -4,7 +4,8 @@
 <form action="" method="post" novalidate style="margin-left: 50px;">
     {{ form.hidden_tag() }}
     <p>
-        {{ form.surname.label }}<br>
+    Обязательные для заполнения поля отмечены: <div style="color:#ff0000;">* </div><br>
+    <div style="color:#ff0000;">* </div>{{ form.surname.label }}<br>
         {{ form.surname(class="form-control") }}<br>
         {% for error in form.surname.errors %}
     <div class="alert alert-danger" role="alert">
@@ -13,7 +14,7 @@
     {% endfor %}
     </p>
     <p>
-        {{ form.name.label }}<br>
+        <div style="color:#ff0000;">* </div>{{ form.name.label }}<br>
         {{ form.name(class="form-control") }}<br>
         {% for error in form.name.errors %}
     <div class="alert alert-danger" role="alert">
@@ -31,7 +32,7 @@
     {% endfor %}
     </p>
     <p>
-        {{ form.email.label }}<br>
+        <div style="color:#ff0000;">* </div>{{ form.email.label }}<br>
         {{ form.email(class="form-control", type="email") }}<br>
         {% for error in form.email.errors %}
     <div class="alert alert-danger" role="alert">

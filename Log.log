@@ -1602,3 +1602,17 @@ jinja2.exceptions.UndefinedError: 'float' is undefined
 2020-05-10 21:21:26,899 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-10 21:22:08,851 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-10 21:22:10,971 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:22:10] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:24:58,495 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:25:00,872 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:00] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:25:06,621 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:06] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:25:08,950 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:08] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:25:12,758 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:12] "[37mGET /view/3 HTTP/1.1[0m" 200 -
+2020-05-10 21:25:15,611 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:15] "[37mGET /order/3 HTTP/1.1[0m" 200 -
+2020-05-10 21:25:16,671 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:16] "[37mGET /view/3 HTTP/1.1[0m" 200 -
+2020-05-10 21:25:19,113 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:19] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-10 21:25:24,345 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:24] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
+2020-05-10 21:25:31,772 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:31] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
+2020-05-10 21:25:36,231 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:36] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:25:38,076 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:38] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:25:42,747 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:42] "[32mGET /order_finish/3 HTTP/1.1[0m" 302 -
+2020-05-10 21:25:42,801 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:25:42] "[37mGET /user_orders HTTP/1.1[0m" 200 -

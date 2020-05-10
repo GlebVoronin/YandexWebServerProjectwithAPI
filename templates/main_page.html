@@ -49,7 +49,7 @@
         <img id="main_page_img" src="{{ cloth.get_images(False) }}"><br>
         Цвета: {{ cloth.colors }}<br>
         {{ cloth.length }} метров осталось<br>
-        Цена за 1 метр: {{ cloth.price }} р.<br>
+        Цена за 1 метр: <font style="color: #159a15;font: normal 20px arial;">{{ cloth.price }} р.</font><br>
         Страна-производитель: {{ cloth.country_id }}<br>
         {% if current_user.account_type == 'Администратор' %}
         <a class="btn btn-primary " href="{{ cloth.get_url() }}">Редактировать</a>

@@ -54,7 +54,7 @@ api.add_resource(all_resources.TypesClothsByUsageListResource, '/api/usage')
 api.add_resource(all_resources.TypesClothsByUsageResource, '/api/usage/<int:object_id>')
 api.add_resource(all_resources.TypesClothsListResource, '/api/types')
 api.add_resource(all_resources.TypesClothsResource, '/api/types/<int:object_id>')
-API_SERVER = 'http://cloths-shop-prorotype.herokuapp.com/api'
+API_SERVER = 'https://cloths-shop-project.herokuapp.com/api'
 
 
 def find_cloth_by_id(cloth_id):

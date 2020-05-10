@@ -1210,3 +1210,5 @@ TypeError: cannot unpack non-iterable int object
 2020-05-10 19:12:15,840 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:12:15] "[32mPOST /login HTTP/1.1[0m" 302 -
 2020-05-10 19:12:19,200 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:12:19] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-10 19:12:30,481 INFO werkzeug 127.0.0.1 - - [10/May/2020 19:12:30] "[37mGET /view/10 HTTP/1.1[0m" 200 -
+2020-05-10 21:00:39,775 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:01:05,148 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:01:05] "[37mGET / HTTP/1.1[0m" 200 -

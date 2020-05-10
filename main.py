@@ -188,7 +188,7 @@ def main_page():
             for cloth in cloths:
                 # id типов использований ткани - список
                 cloth_types_id = cloth.cloth_type_id.split(DIVISOR)
-                if str(usage_id) in cloth_types_id and cloth.id in cloths_id:
+                if str(type_of_cloth_id) in cloth_types_id and cloth.id in cloths_id:
                     temp.append(cloth)
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))

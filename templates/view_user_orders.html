@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block main %}
+<h1 align="center">Заказы пользователей</h1><br>
+<a class="buttons" href='/'>Назад</a><br>
+{% for order in orders %}
+<div id="Order">
+<h2>Заказ №{{ order.id }}</h2>
+    {% if order.is_finished %}
+    <font style="color: #ff0000;">Завершён</font><br>
+    {% endif %}
+    Данные пользователя:<br>
+    Фамилия - {{ user_data[order.id].surname }}<br>
+    Имя - {{ user_data[order.id].name }}<br>
+    Отчество - {{ user_data[order.id].middle_name }}<br>
+    e-mail - {{ user_data[order.id].email }}<br>
+    Номер телефона - {{ user_data[order.id].phone_number }}<br>
+    Почтовый индекс - {{ user_data[order.id].postal_code }}<br>
+    Адрес - {{ user_data[order.id].address }}<br>
+    <br>
+    Данные заказа:<br>
+    {% for item in order.items_id %}
+    {% if not loop.index.last %}
+    Id ткани: {{ item.split("/")[0] }}<br>
+    Метров ткани: {{ item.split("/")[1] }}<br>
+    Цена ткани: {{ item.split("/")[2] }}<br>
+    Сумма за 1 ткань: {{ float(item.split("/")[1]) * float(item.split("/")[2]) }}<br>
+    <br>
+    {% else %}
+    Сумма заказа: {{ item }}
+    {% endfor %}
+    <a class="btn-primary" href="/order_finish/{{ order.id }}">Отметить заказ как завершённый</a>
+</div>
+
+{% endfor %}
+{% endblock %}

@@ -133,6 +133,19 @@ def save_images(images: list):
     return list(reversed(file_names))
 
 
+@login_required
+@administrator_required
+@app.route('/users_orders')
+def view_user_orders():
+    session = db_session.create_session()
+    orders = session.query(Order).filter(Order.status.startswith('ожидает отправки,')).all()
+    user_data = {order.id: session.query(User).filter(User.id == order.status.split('==')[1])
+                 for order in orders}
+    return render_template('view_user_orders.html', orders=orders, user_data=user_data)
+
+
+
+
 @app.route('/', methods=['GET', 'POST'])
 def main_page():
     session = db_session.create_session()
@@ -305,7 +318,7 @@ def view_order(form_data=[]):
     confirm_order = request.args.get('confirm', default=False, type=bool)
     session = db_session.create_session()
     order = session.query(Order).filter(Order.id == current_user.order_id).first()
-    items_id_in_order = order.items_id.split(';')
+    items_id_in_order = order.items_id.split(DIVISOR)
     cloths = []
     for index in items_id_in_order:
         cloth = session.query(Cloth).filter(Cloth.id == index).first()
@@ -337,6 +350,16 @@ def view_order(form_data=[]):
             for index in range(len(cloths)):
                 cloths[index].length -= form_data[0][index]
             order.status = f'ожидает отправки, id пользователя=={current_user.id}'
+            new_data_for_items_id = []
+            items_id = order.items_id.split(DIVISOR)
+            summ = 0
+            for index in range(len(items_id)):
+                price = session.query(Cloth).filter(Cloth.id == items_id[index]).first().price
+                new_data_for_items_id.append(
+                    f'{items_id[index]}/{form_data[0][index]}/{price}')
+                summ += form_data[0][index] * price
+            new_data_for_items_id.append(str(summ))
+            order.items_id = DIVISOR.join(new_data_for_items_id)
             user = session.query(User).filter(User.id == current_user.id).first()
             order = Order(items_id='', status='подготовка', is_finished=False)
             session.add(order)
@@ -540,5 +563,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    # app.run()
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

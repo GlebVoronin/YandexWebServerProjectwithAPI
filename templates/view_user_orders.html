@@ -23,7 +23,7 @@
     Id ткани: {{ item.split("/")[0] }}<br>
     Метров ткани: {{ item.split("/")[1] }}<br>
     Цена ткани: {{ item.split("/")[2] }}<br>
-    Сумма за 1 ткань: {{ float(item.split("/")[1]) * float(item.split("/")[2]) }}<br>
+    Сумма за 1 ткань: {{ item.split("/")[3] }}<br>
     <br>
     {% else %}
     Сумма заказа: {{ item }}

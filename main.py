@@ -139,7 +139,7 @@ def save_images(images: list):
 def view_user_orders():
     session = db_session.create_session()
     orders = session.query(Order).filter(Order.status.startswith('ожидает отправки,')).all()
-    user_data = {order.id: session.query(User).filter(User.id == order.status.split('==')[1])
+    user_data = {order.id: session.query(User).filter(User.id == order.status.split('==')[1]).first()
                  for order in orders}
     return render_template('view_user_orders.html', orders=orders, user_data=user_data)
 
@@ -374,6 +374,13 @@ def view_order(form_data=[]):
             session.add(order)
             session.commit()
             user.order_id = order.id
+            user.surname = order_registration_form.surname.data
+            user.name = order_registration_form.name.data
+            user.middle_name = order_registration_form.middle_name.data
+            user.email = order_registration_form.email.data
+            user.phone_number = order_registration_form.phone_number.data
+            user.address = order_registration_form.address.data
+            user.postal_code = order_registration_form.postal_code.data
             session.commit()
             return render_template('success_order_registration.html')
         else:

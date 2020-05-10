@@ -1546,3 +1546,59 @@ Traceback (most recent call last):
 jinja2.exceptions.UndefinedError: 'float' is undefined
 2020-05-10 21:15:53,342 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:15:53] "[35m[1mGET /user_orders HTTP/1.1[0m" 500 -
 2020-05-10 21:17:44,715 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:17:57,752 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:17:57] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:17:59,392 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:17:59] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:18:03,850 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:03] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:18:09,410 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:09] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-10 21:18:11,203 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:11] "[37mGET /order/2 HTTP/1.1[0m" 200 -
+2020-05-10 21:18:12,498 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:12] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-10 21:18:16,628 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:16] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-10 21:18:22,642 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:22] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
+2020-05-10 21:18:30,813 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:30] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
+2020-05-10 21:18:36,357 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:36] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-10 21:18:37,802 ERROR main Exception on /user_orders [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 144, in view_user_orders
+    return render_template('view_user_orders.html', orders=orders, user_data=user_data)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\view_user_orders.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base.html", line 1, in top-level template code
+    {% extends "base_without_auth_block.html" %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\base_without_auth_block.html", line 17, in top-level template code
+    {% block main %}
+  File "C:\Users\User\PycharmProjects\YandexWebProject\templates\view_user_orders.html", line 26, in block "main"
+    Сумма за 1 ткань: {{ float(item.split("/")[1]) * float(item.split("/")[2]) }}<br>
+jinja2.exceptions.UndefinedError: 'float' is undefined
+2020-05-10 21:18:37,824 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:18:37] "[35m[1mGET /user_orders HTTP/1.1[0m" 500 -
+2020-05-10 21:19:08,232 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:19:10,262 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:19:10] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:21:01,546 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:21:04,318 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:21:04] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:21:07,516 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:21:07] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-10 21:21:26,899 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:22:08,851 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-10 21:22:10,971 INFO werkzeug 127.0.0.1 - - [10/May/2020 21:22:10] "[37mGET /user_orders HTTP/1.1[0m" 200 -

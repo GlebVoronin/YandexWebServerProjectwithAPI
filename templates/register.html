@@ -67,7 +67,7 @@
     {% endfor %}
     </p>
     <p>
-        {{ form.password.label }}<br>
+        <font style="color:#ff0000;">* </font>{{ form.password.label }}<br>
         {{ form.password(class="form-control", type="password") }}<br>
         {% for error in form.password.errors %}
     <div class="alert alert-danger" role="alert">
@@ -76,7 +76,7 @@
     {% endfor %}
     </p>
     <p>
-        {{ form.password_repeat.label }}<br>
+        <font style="color:#ff0000;">* </font>{{ form.password_repeat.label }}<br>
         {{ form.password_repeat(class="form-control", type="password") }}<br>
         {% for error in form.password_repeat.errors %}
     <div class="alert alert-danger" role="alert">

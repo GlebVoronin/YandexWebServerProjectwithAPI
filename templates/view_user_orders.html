@@ -29,7 +29,7 @@
     Сумма заказа: {{ item }}
     {% endif %}
     {% endfor %}
-    {% if order.is_finished %}
+    {% if not order.is_finished %}
     <a class="btn btn-primary" href="/order_finish/{{ order.id }}">Отметить заказ как завершённый</a>
     {% endif %}
 </div>

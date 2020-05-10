@@ -580,5 +580,7 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    # app.run()
-    app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))
+    a = get(API_SERVER + '/users', json={'api_key': 'r651I45H5P3Za45s'}).json()
+    print(a)
+    app.run()
+    # app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

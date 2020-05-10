@@ -64,12 +64,13 @@ a:active {
   border: 2px solid #e0fddf;
 }
 li {
-  width: 25%;
+  width: 19%;
   display: inline-block;
 }
 .btn-primary{
   background-color: #80ff80;
 }
 #Cloth {
+  width: 30%;
   display: inline-block;
 }

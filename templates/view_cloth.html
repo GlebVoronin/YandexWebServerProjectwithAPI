@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block main %}
 <h2 id="title_of_cloth">{{ cloth.title }}</h2>
-<input id="back" class="btn btn-primary" type="button" onclick="history.back();" value="Назад"/><br>
+<input class="btn btn-primary" type="button" onclick="history.back();" value="Назад"/><br>
 <br><img src="{{ cloth.get_images(False) }}" alt="None"><br>
 {% for image in cloth.get_images(True) %}
 {% if loop.index0 != 0 %}

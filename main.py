@@ -31,7 +31,7 @@ config_file = open(CONFIG_FILE, 'r')
 ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
 ADMINISTRATOR_PASSWORD_HASH = ''.join(ADMINISTRATOR_PASSWORD_HASH).split('==')[1].strip()
 config_file.close()
-COUNT_OF_CLOTHS_BY_ONE_PAGE = 30
+COUNT_CLOTHS_BY_PAGE = 5
 DB_NAME = 'Main'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -201,8 +201,11 @@ def main_page():
             cloths = temp.copy()
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
-    if len(cloths) > COUNT_OF_CLOTHS_BY_ONE_PAGE:
-        cloths = cloths[:COUNT_OF_CLOTHS_BY_ONE_PAGE]  # тканей не страницу
+    page_number = request.args.get('page', 0)
+    max_page_number = len(cloths) // COUNT_CLOTHS_BY_PAGE
+    if len(cloths) % COUNT_CLOTHS_BY_PAGE != 0:
+        max_page_number += 1
+    cloths = cloths[COUNT_CLOTHS_BY_PAGE * page_number:COUNT_CLOTHS_BY_PAGE * (page_number + 1)]
     administrator = session.query(User).filter(User.account_type == 'Администратор').first()
     administrator_email = administrator.email
     cash_data_for_country = {}  # кэширование уже встречавшихся id
@@ -212,8 +215,8 @@ def main_page():
             country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
             cash_data_for_country[cloth.country_id] = country['Country'].get('title', 'Неизвестно')
         cloth.country_id = cash_data_for_country[cloth.country_id]
-
     return render_template('main_page.html', cloths=cloths,
+                           page_number=page_number, max_page_number=max_page_number,
                            form=search_form, email=administrator_email)
 
 

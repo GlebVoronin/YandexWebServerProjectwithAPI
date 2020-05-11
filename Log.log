@@ -2754,3 +2754,23 @@ ValueError: invalid literal for int() with base 10: ''
 2020-05-12 01:49:32,614 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:49:32] "[37mGET /?page=1 HTTP/1.1[0m" 200 -
 2020-05-12 01:49:42,370 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:49:42] "[37mPOST /?page=1 HTTP/1.1[0m" 200 -
 2020-05-12 01:49:47,384 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:49:47] "[37mPOST /?page=1 HTTP/1.1[0m" 200 -
+2020-05-12 01:50:37,962 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 01:50:46,943 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:50:46] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:50:51,537 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:50:51] "[37mGET /view/3 HTTP/1.1[0m" 200 -
+2020-05-12 01:50:51,618 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:50:51] "[33mGET /view/static/img/texture_cloth_page.png HTTP/1.1[0m" 404 -
+2020-05-12 01:51:03,557 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:51:03] "[37mGET /view/3 HTTP/1.1[0m" 200 -
+2020-05-12 01:51:09,904 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:51:09] "[33mGET /view/static/img/texture_cloth_page.png HTTP/1.1[0m" 404 -
+2020-05-12 01:51:16,718 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:51:16] "[33mGET /view/static/img/texture_cloth_page.png HTTP/1.1[0m" 404 -
+2020-05-12 01:51:41,654 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 01:51:49,977 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:51:49] "[37mGET /view/3 HTTP/1.1[0m" 200 -
+2020-05-12 01:51:58,916 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:51:58] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-12 01:52:04,003 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:04] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:52:04,212 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:04] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:52:09,806 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:09] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-12 01:52:11,727 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:11] "[37mGET /order/2 HTTP/1.1[0m" 200 -
+2020-05-12 01:52:15,857 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:15] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-12 01:52:23,996 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:23] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-12 01:52:29,653 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:29] "[37mPOST /order?count=True HTTP/1.1[0m" 200 -
+2020-05-12 01:52:31,657 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:31] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
+2020-05-12 01:52:45,513 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:45] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
+2020-05-12 01:52:50,969 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:50] "[37mGET / HTTP/1.1[0m" 200 -

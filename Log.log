@@ -2813,3 +2813,15 @@ ValueError: invalid literal for int() with base 10: ''
 2020-05-12 02:31:46,054 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:46] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-12 02:31:47,598 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:47] "[37mGET /favourites HTTP/1.1[0m" 200 -
 2020-05-12 02:31:50,892 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:50] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:34:38,068 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:34:43,085 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:34:43] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:34:54,034 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:34:54] "[37mGET /view/1 HTTP/1.1[0m" 200 -
+2020-05-12 02:34:59,171 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:34:59] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-12 02:35:02,948 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:02] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:35:04,416 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:04] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-12 02:35:08,444 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:08] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:35:10,321 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:10] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 02:35:13,891 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:13] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:35:19,549 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:19] "[37mGET /view/5 HTTP/1.1[0m" 200 -
+2020-05-12 02:35:21,899 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:21] "[37mGET /view/image?img=/static/img/cloth/image_93.png HTTP/1.1[0m" 200 -
+2020-05-12 02:35:22,132 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:22] "[37mGET /static/img/cloth/image_93.png HTTP/1.1[0m" 200 -

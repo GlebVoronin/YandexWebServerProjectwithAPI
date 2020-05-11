@@ -167,44 +167,51 @@ def order_make_finish(order_id):
 
 
 @app.route('/', methods=['GET', 'POST'])
-def main_page():
+def main_page(form_data=[]):
     session = db_session.create_session()
     search_form = SearchForm()
+    page_number = int(request.args.get('page', 0))
+    search, usage_id, type_of_cloth_id = None, None, None
     if search_form.validate_on_submit():
+        page_number = 0
         # Поиск по категориям и названию.
         # Проверяется соответствие к названию, использованию и типу ткани
         # При совпадении всех показателей - ткань соответствует фильтру
         search = search_form.text.data
         usage_id = search_form.usage.data
         type_of_cloth_id = search_form.type.data
-        cloths = list(session.query(Cloth).all())
-        # id всех тканей
-        cloths_id = [cloth.id for cloth in cloths]
-        if search:
-            # посик по имени, затем обновление списка id тканей
-            cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
-            cloths_id = [cloth.id for cloth in cloths]
-        if usage_id:
-            temp = []  # временный список тканей, для сортировки
-            for cloth in cloths:
-                # id типов использований ткани - список
-                cloth_usages_id = cloth.cloth_type_by_usage_id.split(DIVISOR)
-                if str(usage_id) in cloth_usages_id and cloth.id in cloths_id:
-                    temp.append(cloth)
-            cloths = temp.copy()
-            cloths_id = [cloth.id for cloth in cloths]
-        if type_of_cloth_id:
-            # поиск по типу и проверка на наличие в списке id
-            temp = []  # временный список тканей, для сортировки
-            for cloth in cloths:
-                # id типов использований ткани - список
-                cloth_types_id = cloth.cloth_type_id.split(DIVISOR)
-                if str(type_of_cloth_id) in cloth_types_id and cloth.id in cloths_id:
-                    temp.append(cloth)
-            cloths = temp.copy()
+        form_data.append([search_form.text.data, search_form.type.data, search_form.usage.data])
     else:
-        cloths = list(session.query(Cloth).order_by(Cloth.date))
-    page_number = int(request.args.get('page', 0))
+        if form_data:
+            search, type_of_cloth_id, usage_id = form_data[-1]
+            search_form.text.data = search
+            search_form.type.data = type_of_cloth_id
+            search_form.usage.data = usage_id
+    cloths = list(session.query(Cloth).order_by(Cloth.date))
+    # id всех тканей
+    cloths_id = [cloth.id for cloth in cloths]
+    if search:
+        # посик по имени, затем обновление списка id тканей
+        cloths = list(session.query(Cloth).filter(Cloth.title.like(f'%{search}%')))
+        cloths_id = [cloth.id for cloth in cloths]
+    if usage_id:
+        temp = []  # временный список тканей, для сортировки
+        for cloth in cloths:
+            # id типов использований ткани - список
+            cloth_usages_id = cloth.cloth_type_by_usage_id.split(DIVISOR)
+            if str(usage_id) in cloth_usages_id and cloth.id in cloths_id:
+                temp.append(cloth)
+        cloths = temp.copy()
+        cloths_id = [cloth.id for cloth in cloths]
+    if type_of_cloth_id:
+        # поиск по типу и проверка на наличие в списке id
+        temp = []  # временный список тканей, для сортировки
+        for cloth in cloths:
+            # id типов использований ткани - список
+            cloth_types_id = cloth.cloth_type_id.split(DIVISOR)
+            if str(type_of_cloth_id) in cloth_types_id and cloth.id in cloths_id:
+                temp.append(cloth)
+        cloths = temp.copy()
     max_page_number = len(cloths) // COUNT_CLOTHS_BY_PAGE
     if len(cloths) % COUNT_CLOTHS_BY_PAGE != 0:
         max_page_number += 1

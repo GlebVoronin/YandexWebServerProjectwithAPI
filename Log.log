@@ -2774,3 +2774,42 @@ ValueError: invalid literal for int() with base 10: ''
 2020-05-12 01:52:31,657 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:31] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
 2020-05-12 01:52:45,513 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:45] "[37mPOST /order?confirm=True HTTP/1.1[0m" 200 -
 2020-05-12 01:52:50,969 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:52:50] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:06:49,968 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:07:07,596 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:07] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:07:15,197 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:15] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-12 02:07:19,147 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:07:20,127 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:20] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-12 02:07:23,657 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:23] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:07:28,206 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:28] "[37mGET /view/1 HTTP/1.1[0m" 200 -
+2020-05-12 02:07:31,650 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:07:31] "[37mGET /favourites/1 HTTP/1.1[0m" 200 -
+2020-05-12 02:08:07,085 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:08:13,476 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:08:13] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:08:20,553 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:08:20] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-12 02:08:30,664 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:08:30] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-12 02:08:32,757 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:08:32] "[37mGET /favourites/2 HTTP/1.1[0m" 200 -
+2020-05-12 02:08:36,760 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:08:36] "[37mGET /view/2 HTTP/1.1[0m" 200 -
+2020-05-12 02:24:35,898 INFO werkzeug  * Running on http://0.0.0.0:33507/ (Press CTRL+C to quit)
+2020-05-12 02:25:11,171 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:25:16,853 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:25:16] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:26:06,336 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:26:14,291 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:26:14] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:26:14,406 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:26:14] "[37mGET /static/css/style_v56.css HTTP/1.1[0m" 200 -
+2020-05-12 02:26:35,110 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:26:39,929 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:26:39] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:27:27,946 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:27:33,380 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:27:33] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:27:33,493 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:27:33] "[37mGET /static/css/style_v57.css HTTP/1.1[0m" 200 -
+2020-05-12 02:27:58,143 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:28:02,954 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:28:02] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:28:58,949 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:29:07,270 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:29:07] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:29:07,381 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:29:07] "[37mGET /static/css/style_v58.css HTTP/1.1[0m" 200 -
+2020-05-12 02:30:37,963 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:30:44,510 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:30:44] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:30:44,616 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:30:44] "[37mGET /static/css/style_v59.css HTTP/1.1[0m" 200 -
+2020-05-12 02:31:00,853 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 02:31:05,830 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:05] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:31:40,860 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:40] "[37mGET /order HTTP/1.1[0m" 200 -
+2020-05-12 02:31:46,054 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:46] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 02:31:47,598 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:47] "[37mGET /favourites HTTP/1.1[0m" 200 -
+2020-05-12 02:31:50,892 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:31:50] "[37mGET / HTTP/1.1[0m" 200 -

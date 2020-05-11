@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block main %}
 <h1 align="center">Избранное</h1><br>
-<a class="buttons" href='/'>Назад</a><br>
+<a class="btn btn-primary" href='/'>Назад</a><br>
 {% for cloth in cloths %}
 <a class="buttons" href="/view{{ cloth.get_url() }}">
     <div id="Cloth">

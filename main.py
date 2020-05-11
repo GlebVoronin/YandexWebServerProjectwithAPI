@@ -19,19 +19,22 @@ from flask_login import (login_user, logout_user, login_required, LoginManager, 
 from flask_restful import Api
 from resources import all_resources
 
-LOG_FILE = 'Log.log'
-CONFIG_FILE = 'config.txt'
+LOG_FILE = 'Log.log'  # имя файла с логами сервера
+CONFIG_FILE = 'config.txt'  # имя файла с настроками сайта
+# запись логов сервера
 logging.basicConfig(
     level=logging.ERROR,
     filename=LOG_FILE,
     format='%(asctime)s %(levelname)s %(name)s %(message)s'
 )
+# разделитель между данными в одном поле модели в базе данных, един для всего,
+# кроме разделения суммы/цены/количества тканей в оформленном заказе пользователя
 DIVISOR = ';'
 config_file = open(CONFIG_FILE, 'r')
 ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
 ADMINISTRATOR_PASSWORD_HASH = ''.join(ADMINISTRATOR_PASSWORD_HASH).split('==')[1].strip()
 config_file.close()
-COUNT_CLOTHS_BY_PAGE = 5
+COUNT_CLOTHS_BY_PAGE = 6  # количество тканей на страницу
 DB_NAME = 'Main'
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
@@ -201,7 +204,7 @@ def main_page():
             cloths = temp.copy()
     else:
         cloths = list(session.query(Cloth).order_by(Cloth.date))
-    page_number = request.args.get('page', 0)
+    page_number = int(request.args.get('page', 0))
     max_page_number = len(cloths) // COUNT_CLOTHS_BY_PAGE
     if len(cloths) % COUNT_CLOTHS_BY_PAGE != 0:
         max_page_number += 1

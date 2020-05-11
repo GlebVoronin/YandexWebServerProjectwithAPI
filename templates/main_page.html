@@ -63,10 +63,13 @@
     </a>
 </div>
 {% endfor %}
-{% if page_number %}
-<a class="btn btn-primary " href="/?page={{ page_number - 1 }}">Предыдущая страница</a>
-{% endif %}
-{% if page_number + 1 != max_page_number %}
-<a class="btn btn-primary " href="/?">Следующая страница</a>
-{% endif %}
+<br><br>
+<center>
+    {% if page_number %}
+    <a class="btn btn-primary " href="/?page={{ page_number - 1 }}">Предыдущая страница</a>
+    {% endif %}
+    {% if page_number + 1 != max_page_number %}
+    <a class="btn btn-primary " href="/?page={{ page_number + 1 }}">Следующая страница</a>
+    {% endif %}
+</center>>
 {% endblock %}

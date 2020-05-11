@@ -2619,3 +2619,50 @@ jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'block_main_page_
 2020-05-11 03:14:34,125 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-11 03:14:38,188 INFO werkzeug 127.0.0.1 - - [11/May/2020 03:14:38] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-11 03:14:38,328 INFO werkzeug 127.0.0.1 - - [11/May/2020 03:14:38] "[37mGET /static/css/style_v55.css HTTP/1.1[0m" 200 -
+2020-05-12 01:19:46,258 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 01:19:55,848 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:55] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:19:55,989 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:55] "[37mGET /static/css/style_v55.css HTTP/1.1[0m" 200 -
+2020-05-12 01:19:56,176 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[37mGET /static/img/texture_cloth_page.png HTTP/1.1[0m" 200 -
+2020-05-12 01:19:56,314 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[36mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 304 -
+2020-05-12 01:19:56,319 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[36mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 304 -
+2020-05-12 01:19:56,349 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[36mGET /static/img/cloth/image_77.png HTTP/1.1[0m" 304 -
+2020-05-12 01:19:56,374 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[36mGET /static/img/cloth/image_68.png HTTP/1.1[0m" 304 -
+2020-05-12 01:19:56,428 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[36mGET /static/img/cloth/image_90.png HTTP/1.1[0m" 304 -
+2020-05-12 01:19:56,842 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:19:56] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-05-12 01:20:04,304 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:20:04] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:20:10,981 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:20:10] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:20:35,964 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 01:20:42,259 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:20:42] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:20:45,127 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 208, in main_page
+    cloths = cloths[COUNT_CLOTHS_BY_PAGE * page_number:COUNT_CLOTHS_BY_PAGE * (page_number + 1)]
+TypeError: can only concatenate str (not "int") to str
+2020-05-12 01:20:45,264 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:20:45] "[35m[1mGET /?page=1 HTTP/1.1[0m" 500 -
+2020-05-12 01:21:46,071 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 01:21:53,105 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:53] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 01:21:56,913 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:56] "[37mGET /?page=1 HTTP/1.1[0m" 200 -
+2020-05-12 01:21:57,142 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:57] "[36mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 304 -
+2020-05-12 01:21:57,152 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:57] "[36mGET /static/img/cloth/image_99.png HTTP/1.1[0m" 304 -
+2020-05-12 01:21:57,208 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:57] "[36mGET /static/img/cloth/image_107.png HTTP/1.1[0m" 304 -
+2020-05-12 01:21:57,294 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:57] "[36mGET /static/img/cloth/image_115.png HTTP/1.1[0m" 304 -
+2020-05-12 01:21:57,332 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:21:57] "[36mGET /static/img/cloth/image_103.png HTTP/1.1[0m" 304 -
+2020-05-12 01:22:00,468 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:22:00] "[37mGET /?page=2 HTTP/1.1[0m" 200 -
+2020-05-12 01:22:00,700 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:22:00] "[36mGET /static/img/cloth/image_123.png HTTP/1.1[0m" 304 -
+2020-05-12 01:22:00,733 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:22:00] "[36mGET /static/img/cloth/image_119.png HTTP/1.1[0m" 304 -
+2020-05-12 01:22:00,787 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:22:00] "[36mGET /static/img/cloth/image_131.png HTTP/1.1[0m" 304 -
+2020-05-12 01:22:00,831 INFO werkzeug 127.0.0.1 - - [12/May/2020 01:22:00] "[36mGET /static/img/cloth/image_134.png HTTP/1.1[0m" 304 -

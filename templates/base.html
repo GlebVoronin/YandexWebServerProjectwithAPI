@@ -1,11 +1,17 @@
 {% extends "base_without_auth_block.html" %}
+
 {% block authorization %}
 <div class="container text-center" id="auth_block">
+    <br><br><br><br><br>
     <div align="center">
-        <h1>Склад тканей</h1>
+        <h1 class="auth_text">Склад тканей</h1>
         {% if current_user.is_authenticated %}
-        <a class="navbar-brand" href="/order">{{ current_user.surname }} {{ current_user.name }}</a>
-        <a class="navbar-brand" href="/logout">Выход</a>
+        <a class="navbar-brand" href="/order">
+            <p class="auth_text">{{ current_user.surname }} {{ current_user.name }}</p>
+        </a>
+        <a class="navbar-brand" href="/logout">
+            <p class="auth_text">Выход</p>
+        </a>
         {% else %}
         <p>
             <a class="btn btn-primary " id="register" href="/register">Зарегистрироваться</a>

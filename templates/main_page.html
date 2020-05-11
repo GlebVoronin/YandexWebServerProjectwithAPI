@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block main_page_image %}
+<img src="static/img/texture_cloth_page.png" alt="" id="main_page_image_background">
+{% endblock %}
+
 {% block main %}
 {% if current_user.account_type == 'Администратор' %}
 

@@ -6,12 +6,14 @@ body {
 #login {
   background-color: #80ff80;
 }
-#register {
+#register {#80ff80;
   background-color: #80ff80;
 }
 #auth_block {
   width: 20%;
   position: absolute;
+  color: #80ff80;
+  font: normal 45px arial;
   right: 0;
 }
 #img_view {
@@ -77,4 +79,14 @@ li {
 #administrator_email {
   position: absolute;
   right: 0;
+}
+#main_page_image_background {
+  position: absolute;
+  right: 0;
+  top: 0
+  width: 50%;
+  height: 50%;
+}
+.auth_text {
+  color: #80ff80;
 }

@@ -3,7 +3,7 @@ from PIL import Image
 import logging
 import os
 from werkzeug.security import check_password_hash
-from requests import get
+from requests import get, put, delete
 from flask import (Flask, request, abort, render_template, redirect, jsonify, make_response)
 from data import db_session
 from data.models.users import User
@@ -19,21 +19,22 @@ from resources import all_resources
 
 LOG_FILE = 'Log.log'  # имя файла с логами сервера
 CONFIG_FILE = 'config.txt'  # имя файла с настроками сайта
+# разделитель между данными в одном поле модели в базе данных, един для всего,
+# кроме разделения суммы/цены/количества тканей в оформленном заказе пользователя
+DIVISOR = ';'
+COUNT_CLOTHS_BY_PAGE = 6  # количество тканей на страницу
+DB_NAME = 'Main'
 # запись логов сервера
 logging.basicConfig(
     level=logging.ERROR,
     filename=LOG_FILE,
     format='%(asctime)s %(levelname)s %(name)s %(message)s'
 )
-# разделитель между данными в одном поле модели в базе данных, един для всего,
-# кроме разделения суммы/цены/количества тканей в оформленном заказе пользователя
-DIVISOR = ';'
 config_file = open(CONFIG_FILE, 'r')
 ADMINISTRATOR_PASSWORD_HASH = [line for line in config_file.readlines() if 'PASS' in line]
 ADMINISTRATOR_PASSWORD_HASH = ''.join(ADMINISTRATOR_PASSWORD_HASH).split('==')[1].strip()
 config_file.close()
-COUNT_CLOTHS_BY_PAGE = 6  # количество тканей на страницу
-DB_NAME = 'Main'
+
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 db_session.global_init(f'db/{DB_NAME}.sqlite')
@@ -117,7 +118,7 @@ def save_images(images: list):
             file.close()
             image = Image.open(f'./static/img/cloth/image_{image_index}.png')
             image = image.resize((1024, 1024), Image.LANCZOS)
-            if index == 0:
+            if index == 0:  # картинка к главной странице
                 image.save(f'./static/img/cloth/image_{image_index + 1}.png')
                 image = image.resize((256, 256), Image.LANCZOS)
                 image.save(f'./static/img/cloth/image_{image_index}.png')
@@ -131,7 +132,7 @@ def save_images(images: list):
         file_names = [f'/static/img/cloth/image_{image_index - i - 1}.png' for i in range(len(images) + 1)]
     except Exception as error:
         logging.error(error)
-        file_names = ''
+        file_names = ['']
     return list(reversed(file_names))
 
 
@@ -148,19 +149,13 @@ def view_user_orders():
 
 @login_required
 @administrator_required
-@app.route('/view_logs')
-def view_logs():
-    return redirect(f'/{LOG_FILE}')
-
-
-@login_required
-@administrator_required
 @app.route('/order_finish/<int:order_id>')
 def order_make_finish(order_id):
-    session = db_session.create_session()
-    order = session.query(Order).filter(Order.id == order_id).first()
-    order.is_finished = True
-    session.commit()
+    order = get(API_SERVER + f'/orders/{order_id}').json()['Order']
+    put(API_SERVER + f'/orders/{order_id}', json={'api_key': 'r651I45H5P3Za45s',
+                                                  'items_id': order['items_id'],
+                                                  'is_finished': True,
+                                                  'status': order['status']})
     return redirect('/user_orders')
 
 
@@ -530,13 +525,7 @@ def edit_cloth(cloth_id):
 @administrator_required
 @app.route('/delete/<int:cloth_id>', methods=['GET', 'POST'])
 def delete_cloth(cloth_id):
-    session = db_session.create_session()
-    cloth = session.query(Cloth).filter(Cloth.id == cloth_id).first()
-    if cloth:
-        session.delete(cloth)
-        session.commit()
-    else:
-        abort(404)
+    delete(API_SERVER + f'/cloths/{cloth_id}', json={'api_key': 'r651I45H5P3Za45s'})
     return redirect('/')
 
 

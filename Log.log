@@ -2873,3 +2873,250 @@ ValueError: invalid literal for int() with base 10: ''
 2020-05-12 15:39:50,259 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:50] "[37mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 200 -
 2020-05-12 15:39:50,261 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:50] "[37mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 200 -
 2020-05-12 15:39:51,605 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:51] "[37mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 200 -
+2020-05-12 20:18:49,433 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 20:48:33,769 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 20:48:39,113 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,520 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/css/style_v65.css HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,659 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/img/cloth/image_77.png HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,659 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,716 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,720 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/img/cloth/image_68.png HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,757 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/img/cloth/image_90.png HTTP/1.1[0m" 200 -
+2020-05-12 20:48:39,762 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:39] "[37mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 200 -
+2020-05-12 20:48:40,053 INFO werkzeug 127.0.0.1 - - [12/May/2020 20:48:40] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-05-12 22:52:09,694 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 22:54:27,380 INFO werkzeug 127.0.0.1 - - [12/May/2020 22:54:27] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 22:54:28,104 INFO werkzeug 127.0.0.1 - - [12/May/2020 22:54:28] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 22:54:36,776 INFO werkzeug 127.0.0.1 - - [12/May/2020 22:54:36] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 22:54:36,861 INFO werkzeug 127.0.0.1 - - [12/May/2020 22:54:36] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 22:55:58,876 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 22:56:09,240 INFO werkzeug 127.0.0.1 - - [12/May/2020 22:56:09] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:01:17,454 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:01:28,791 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:28] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 23:01:37,609 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:37] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:01:43,405 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:43] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:01:43,577 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:43] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:01:49,230 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:49] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:01:49,342 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:49] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:01:56,724 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:56] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:01:57,258 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:01:57] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:04:07,966 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:04:36,974 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 109, in put
+    api_key = dict(args).get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:04:37,119 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:04:37] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:04:37,172 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:04:37] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:04:38,131 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:04:38] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:05:42,389 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:07:01,466 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 110, in put
+    api_key = dict(args).get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:08:02,207 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:08:10,774 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:08:10] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 23:08:13,872 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:08:13] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:15:26,355 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:15:32,503 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:15:32] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:15:38,124 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:15:38] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:15:58,227 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:15:58] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:16:14,136 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:16:14,159 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:14] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:16:14,176 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:14] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:16:14,245 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:14] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:16:20,043 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:16:20,047 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:20] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:16:20,061 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:20] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:16:20,141 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:20] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:16:24,349 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:24] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:18:00,632 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:18:07,142 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:07] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 23:18:09,528 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:09] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:18:15,959 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:15] "[37mGET /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:18:18,055 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:18:18,070 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:18] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:19:10,855 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:19:19,653 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:19:19] "[37mGET /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:20:10,774 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:20:22,541 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:20:22] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:20:22,567 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:20:22] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:20:24,530 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:20:24] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:21:10,434 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:21:16,295 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:16] "[37mGET /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:21:22,004 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:22] "[37mPUT /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:21:22,039 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:22] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:21:22,229 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:22] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:21:25,511 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:25] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:21:39,463 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:21:46,087 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:46] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:24:12,343 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:24:16,154 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:16] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:24:22,697 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:22] "[37mGET /api/orders/4 HTTP/1.1[0m" 200 -
+2020-05-12 23:24:28,646 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:28] "[37mPUT /api/orders/4 HTTP/1.1[0m" 200 -
+2020-05-12 23:24:28,686 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:28] "[32mGET /order_finish/4 HTTP/1.1[0m" 302 -
+2020-05-12 23:24:28,779 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:28] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:40:01,963 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:40:10,002 ERROR main Exception on / [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 218, in main_page
+    country = get(API_SERVER + f'/countries/{cloth.country_id}').json()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\requests\models.py", line 898, in json
+    return complexjson.loads(self.text, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "C:\Users\User\AppData\Local\Programs\Python\Python37\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2020-05-12 23:40:10,159 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:40:10] "[35m[1mGET / HTTP/1.1[0m" 500 -
+2020-05-12 23:42:53,439 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:43:01,333 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:43:01] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:44:00,292 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:44:03,012 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:44:03] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:44:08,591 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:44:08] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:45:05,640 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:45:08,410 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:45:08] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:45:47,117 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:45:48,899 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:45:48] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:46:41,206 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:46:43,309 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:46:43] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:47:37,391 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:47:39,288 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:47:39] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:48:05,095 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:48:08,070 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:48:08] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:49:26,733 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:49:28,810 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:49:28] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:52:42,930 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:52:44,851 ERROR main Exception on /view_logs [GET]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 272, in error_router
+    return original_handler(e)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Users/User/PycharmProjects/YandexWebProject/main.py", line 539, in view_logs
+    return render_template('view_logs', logs=data)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\jinja2\loaders.py", line 117, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: view_logs
+2020-05-12 23:52:44,994 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:52:44] "[35m[1mGET /view_logs HTTP/1.1[0m" 500 -
+2020-05-12 23:53:11,661 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:53:13,740 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:53:13] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:53:46,691 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:53:48,823 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:53:48] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:58:28,223 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:59:01,965 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:59:01] "[37mGET /view_logs HTTP/1.1[0m" 200 -

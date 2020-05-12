@@ -529,16 +529,6 @@ def delete_cloth(cloth_id):
     return redirect('/')
 
 
-@login_required
-@administrator_required
-@app.route('/view_logs')
-def view_logs():
-    file = open(LOG_FILE, 'r')
-    data = file.readlines()
-    file.close()
-    return render_template('view_logs.html', logs=data)
-
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()

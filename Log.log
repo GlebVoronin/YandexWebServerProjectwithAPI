@@ -3118,3 +3118,5 @@ jinja2.exceptions.TemplateNotFound: view_logs
 2020-05-12 23:53:13,740 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:53:13] "[37mGET /view_logs HTTP/1.1[0m" 200 -
 2020-05-12 23:53:46,691 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-12 23:53:48,823 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:53:48] "[37mGET /view_logs HTTP/1.1[0m" 200 -
+2020-05-12 23:58:28,223 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:59:01,965 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:59:01] "[37mGET /view_logs HTTP/1.1[0m" 200 -

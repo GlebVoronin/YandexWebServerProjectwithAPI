@@ -2825,3 +2825,51 @@ ValueError: invalid literal for int() with base 10: ''
 2020-05-12 02:35:19,549 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:19] "[37mGET /view/5 HTTP/1.1[0m" 200 -
 2020-05-12 02:35:21,899 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:21] "[37mGET /view/image?img=/static/img/cloth/image_93.png HTTP/1.1[0m" 200 -
 2020-05-12 02:35:22,132 INFO werkzeug 127.0.0.1 - - [12/May/2020 02:35:22] "[37mGET /static/img/cloth/image_93.png HTTP/1.1[0m" 200 -
+2020-05-12 15:24:48,519 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:25:12,672 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[33mGET /static/css/style_v59.css HTTP/1.1[0m" 404 -
+2020-05-12 15:25:12,690 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/texture_cloth_page.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:12,771 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/cloth/image_68.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:12,777 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/cloth/image_77.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:12,795 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:12,844 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:12,854 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:12,857 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:12] "[36mGET /static/img/cloth/image_90.png HTTP/1.1[0m" 304 -
+2020-05-12 15:25:13,150 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2020-05-12 15:25:19,655 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:19] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:25:19,761 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:25:19] "[37mGET /static/css/style_v60.css HTTP/1.1[0m" 200 -
+2020-05-12 15:29:24,427 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:29:28,990 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:29:28] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:29:29,102 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:29:29] "[37mGET /static/css/style_v61.css HTTP/1.1[0m" 200 -
+2020-05-12 15:29:40,378 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:29:40] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:30:28,165 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:30:43,031 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:30:47,444 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:30:47] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:30:47,545 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:30:47] "[37mGET /static/css/style_v62.css HTTP/1.1[0m" 200 -
+2020-05-12 15:31:22,401 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:31:22] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:32:46,517 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:32:51,262 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:32:51] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:32:51,377 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:32:51] "[37mGET /static/css/style_v63.css HTTP/1.1[0m" 200 -
+2020-05-12 15:33:40,657 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:33:45,884 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:33:45] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:33:45,968 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:33:45] "[37mGET /static/css/style_v64.css HTTP/1.1[0m" 200 -
+2020-05-12 15:34:48,570 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:35:47,317 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:47] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:35:48,905 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:48] "[37mGET /static/css/style_v64.css HTTP/1.1[0m" 200 -
+2020-05-12 15:35:49,830 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:49] "[37mGET /static/img/texture_cloth_page.png HTTP/1.1[0m" 200 -
+2020-05-12 15:35:49,856 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:49] "[37mGET /static/img/cloth/image_68.png HTTP/1.1[0m" 200 -
+2020-05-12 15:35:50,217 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:50] "[37mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 200 -
+2020-05-12 15:35:50,241 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:50] "[37mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 200 -
+2020-05-12 15:35:50,252 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:50] "[37mGET /static/img/cloth/image_77.png HTTP/1.1[0m" 200 -
+2020-05-12 15:35:50,955 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:35:50] "[37mGET /static/img/cloth/image_90.png HTTP/1.1[0m" 200 -
+2020-05-12 15:36:05,225 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:36:05] "[37mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 200 -
+2020-05-12 15:38:57,606 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 15:39:05,921 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:05] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:39:06,045 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:06] "[37mGET /static/css/style_v65.css HTTP/1.1[0m" 200 -
+2020-05-12 15:39:48,028 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:48] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 15:39:48,994 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:48] "[37mGET /static/css/style_v65.css HTTP/1.1[0m" 200 -
+2020-05-12 15:39:49,944 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:49] "[37mGET /static/img/cloth/image_68.png HTTP/1.1[0m" 200 -
+2020-05-12 15:39:49,945 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:49] "[37mGET /static/img/cloth/image_77.png HTTP/1.1[0m" 200 -
+2020-05-12 15:39:50,257 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:50] "[37mGET /static/img/cloth/image_90.png HTTP/1.1[0m" 200 -
+2020-05-12 15:39:50,259 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:50] "[37mGET /static/img/cloth/image_86.png HTTP/1.1[0m" 200 -
+2020-05-12 15:39:50,261 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:50] "[37mGET /static/img/cloth/image_82.png HTTP/1.1[0m" 200 -
+2020-05-12 15:39:51,605 INFO werkzeug 127.0.0.1 - - [12/May/2020 15:39:51] "[37mGET /static/img/cloth/image_95.png HTTP/1.1[0m" 200 -

@@ -11,10 +11,10 @@ body {
 }
 #auth_block {
   width: 20%;
-  position: absolute;
   color: #80ff80;
-  font: normal 60px arial;
+  position: absolute;
   right: 0;
+  font: normal 60px arial;
 }
 #img_view {
    width: 70%;
@@ -80,13 +80,6 @@ li {
   position: absolute;
   right: 0;
 }
-#main_page_image_background {
-  position: absolute;
-  right: 0;
-  top: 0
-  width: 50%;
-  height: 50%;
-}
 .auth_text {
-  color: #80ff80;
+  color: #20aa20;
 }

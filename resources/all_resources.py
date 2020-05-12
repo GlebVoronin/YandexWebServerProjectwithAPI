@@ -82,7 +82,8 @@ class BaseResource(Resource):
 
     def get(self, object_id):
         if 'user' in self.class_of_object.__name__.lower():
-            api_key = dict(self.parser.parse_args()).get('api_key', default=None)
+            dict_of_args = dict(self.parser.parse_args())
+            api_key = dict_of_args.get('api_key', default=None)
             check_api_key(api_key)
         self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
@@ -95,7 +96,8 @@ class BaseResource(Resource):
         )
 
     def delete(self, object_id):
-        api_key = dict(self.parser.parse_args()).get('api_key', default=None)
+        dict_of_args = dict(self.parser.parse_args())
+        api_key = dict_of_args.get('api_key', default=None)
         check_api_key(api_key)
         self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
@@ -106,7 +108,8 @@ class BaseResource(Resource):
 
     def put(self, object_id):
         args = self.parser.parse_args()
-        api_key = dict(args).get('api_key', default=None)
+        dict_of_args = dict(args)  # чтобв использовать метод get и его default-значение
+        api_key = dict_of_args.get('api_key', default=None)
         check_api_key(api_key)
         self.abort_if_object_not_found(object_id)
         session = db_session.create_session()
@@ -123,7 +126,8 @@ class BaseListResource(Resource):
 
     def post(self):
         args = self.parser.parse_args()
-        api_key = dict(args).get('api_key', default=None)
+        dict_of_args = dict(args)
+        api_key = dict_of_args.get('api_key', default=None)
         check_api_key(api_key)
         session = db_session.create_session()
         object_ = self.class_of_object()  # создание объекта модели
@@ -137,8 +141,8 @@ class BaseListResource(Resource):
 
     def get(self):
         if 'user' in self.class_of_object.__name__.lower():
-            api_key = dict(self.parser.parse_args())
-            api_key = api_key.get('api_key', None)
+            dict_of_args = dict(self.parser.parse_args())
+            api_key = dict_of_args.get('api_key', None)
             check_api_key(api_key)
         session = db_session.create_session()
         objects = session.query(self.class_of_object).all()

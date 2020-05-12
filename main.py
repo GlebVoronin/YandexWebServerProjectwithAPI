@@ -534,9 +534,9 @@ def delete_cloth(cloth_id):
 @app.route('/view_logs')
 def view_logs():
     file = open(LOG_FILE, 'r')
-    data_of_logs = file.read()
+    data = file.readlines()
     file.close()
-    return data_of_logs
+    return render_template('view_logs.html', logs=data)
 
 
 @app.route('/login', methods=['GET', 'POST'])

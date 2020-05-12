@@ -149,13 +149,6 @@ def view_user_orders():
 
 @login_required
 @administrator_required
-@app.route('/view_logs')
-def view_logs():
-    return redirect(f'/{LOG_FILE}')
-
-
-@login_required
-@administrator_required
 @app.route('/order_finish/<int:order_id>')
 def order_make_finish(order_id):
     order = get(API_SERVER + f'/orders/{order_id}').json()['Order']

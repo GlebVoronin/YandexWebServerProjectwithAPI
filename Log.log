@@ -2938,3 +2938,98 @@ TypeError: get() takes no keyword arguments
 2020-05-12 23:08:02,207 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-05-12 23:08:10,774 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:08:10] "[37mGET / HTTP/1.1[0m" 200 -
 2020-05-12 23:08:13,872 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:08:13] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:15:26,355 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:15:32,503 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:15:32] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:15:38,124 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:15:38] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:15:58,227 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:15:58] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:16:14,136 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:16:14,159 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:14] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:16:14,176 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:14] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:16:14,245 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:14] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:16:20,043 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:16:20,047 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:20] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:16:20,061 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:20] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:16:20,141 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:20] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:16:24,349 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:16:24] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:18:00,632 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:18:07,142 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:07] "[37mGET / HTTP/1.1[0m" 200 -
+2020-05-12 23:18:09,528 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:09] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:18:15,959 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:15] "[37mGET /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:18:18,055 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:18:18,070 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:18:18] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:19:10,855 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:19:19,653 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:19:19] "[37mGET /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:20:10,774 ERROR main Exception on /api/orders/2 [PUT]
+Traceback (most recent call last):
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 468, in wrapper
+    resp = resource(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask\views.py", line 89, in view
+    return self.dispatch_request(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\sql_alchemy\venv\lib\site-packages\flask_restful\__init__.py", line 583, in dispatch_request
+    resp = meth(*args, **kwargs)
+  File "C:\Users\User\PycharmProjects\YandexWebProject\resources\all_resources.py", line 112, in put
+    api_key = dict_of_args.get('api_key', default=None)
+TypeError: get() takes no keyword arguments
+2020-05-12 23:20:22,541 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:20:22] "[35m[1mPUT /api/orders/2 HTTP/1.1[0m" 500 -
+2020-05-12 23:20:22,567 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:20:22] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:20:24,530 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:20:24] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:21:10,434 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:21:16,295 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:16] "[37mGET /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:21:22,004 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:22] "[37mPUT /api/orders/2 HTTP/1.1[0m" 200 -
+2020-05-12 23:21:22,039 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:22] "[32mGET /order_finish/2 HTTP/1.1[0m" 302 -
+2020-05-12 23:21:22,229 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:22] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:21:25,511 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:25] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:21:39,463 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:21:46,087 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:21:46] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:24:12,343 INFO werkzeug  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-05-12 23:24:16,154 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:16] "[37mGET /user_orders HTTP/1.1[0m" 200 -
+2020-05-12 23:24:22,697 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:22] "[37mGET /api/orders/4 HTTP/1.1[0m" 200 -
+2020-05-12 23:24:28,646 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:28] "[37mPUT /api/orders/4 HTTP/1.1[0m" 200 -
+2020-05-12 23:24:28,686 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:28] "[32mGET /order_finish/4 HTTP/1.1[0m" 302 -
+2020-05-12 23:24:28,779 INFO werkzeug 127.0.0.1 - - [12/May/2020 23:24:28] "[37mGET /user_orders HTTP/1.1[0m" 200 -

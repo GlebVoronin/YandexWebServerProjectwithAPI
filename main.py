@@ -3,7 +3,7 @@ from PIL import Image
 import logging
 import os
 from werkzeug.security import check_password_hash
-from requests import get, post, delete, put, patch
+from requests import get
 from flask import (Flask, request, abort, render_template, redirect, jsonify, make_response)
 from data import db_session
 from data.models.users import User
@@ -11,8 +11,6 @@ from data.models.cloths import Cloth
 from data.models.countries import Country
 from data.models.orders import Order
 from data.models.favourites import FavouriteItems
-from data.models.cloth_groups_by_types import TypesCloths
-from data.models.cloth_groups_by_usage import TypesClothsByUsage
 from data.forms import (RegisterForm, LoginForm, AddClothForm,
                         OrderForm, OrderRegistrationForm, SearchForm)
 from flask_login import (login_user, logout_user, login_required, LoginManager, current_user)
@@ -602,5 +600,5 @@ def not_found(error):
 
 
 if __name__ == '__main__':
-    # app.run()
+    # app.run()  
     app.run(host='0.0.0.0', port=os.environ.get('PORT', 33507))

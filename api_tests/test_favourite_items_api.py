@@ -1,6 +1,6 @@
 from requests import get, post, put, delete
 
-favourite_api_server = 'http://cloths-shop-prorotype.herokuapp.com/api/favourites'
+favourite_api_server = 'http://cloths-shop-project.herokuapp.com/api/favourites'
 # 'id', 'items_id' - возможные поля, используемые в бд
 """Для выполнения корректного запроса требуется заполнение всех полей модели кроме id!"""
 """Корректные"""

@@ -1,6 +1,6 @@
 from requests import get, post, put, delete
 
-user_api_server = 'http://cloths-shop-prorotype.herokuapp.com/api/users'
+user_api_server = 'http://cloths-shop-project.herokuapp.com/api/users'
 """Для выполнения корректного запроса требуется заполнение всех полей модели кроме id!"""
 """Корректные"""
 """UserListResource"""

@@ -1,6 +1,6 @@
 from requests import get, post, put, delete
 
-country_api_server = 'http://cloths-shop-prorotype.herokuapp.com/api/countries'
+country_api_server = 'http://cloths-shop-project.herokuapp.com/api/countries'
 # 'id', 'title' - возможные поля, используемые в бд
 """Для выполнения корректного запроса требуется заполнение всех полей модели кроме id!"""
 """Корректные"""

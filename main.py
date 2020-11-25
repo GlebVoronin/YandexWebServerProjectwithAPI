@@ -486,7 +486,7 @@ def edit_cloth(cloth_id):
             form.usage.data = usages_id
             form.type.data = types_id
             country = session.query(Country).filter(Country.title == cloth.country_id).first()
-            form.country.data = country.title
+            form.country.data = country
         else:
             abort(404)
     if form.validate_on_submit():
